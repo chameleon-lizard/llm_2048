@@ -3,6 +3,10 @@ LLM-Powered 2048 Game Player
 This script uses an LLM to play the 2048 game and logs all moves.
 """
 
+# Set random seed for deterministic gameplay
+import random
+random.seed(42)
+
 import argparse
 import json
 import re
@@ -12,14 +16,15 @@ from openai import OpenAI
 from game_2048 import init_grid, shift, is_game_over, get_score, display
 
 
-def get_llm_move(client, grid_state, model="gpt-4o-mini"):
+def get_llm_move(client, grid_state, model="gpt-4o-mini", max_retries=5):
     """
-    Get the next move from the LLM.
+    Get the next move from the LLM with retry logic.
     
     Args:
         client: OpenAI client instance
         grid_state: Current game state (4x4 grid)
         model: OpenAI model to use
+        max_retries: Maximum number of attempts to get a valid response
     
     Returns:
         Tuple of (direction, full_response)
@@ -49,31 +54,43 @@ Here is the current grid state:
 
 Where the values should be shifted next?"""
     
-    response = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "user", "content": prompt}
-        ],
-        temperature=0.7
-    )
+    # Retry logic
+    last_response = None
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.7
+            )
+            
+            full_response = response.choices[0].message.content
+            last_response = full_response
+            
+            # Extract the direction from FINAL_RESPONSE
+            match = re.search(r'FINAL_RESPONSE:\s*(UP|DOWN|LEFT|RIGHT)', full_response, re.IGNORECASE)
+            
+            if match:
+                direction = match.group(1).upper()
+                # Convert to lowercase for the shift function
+                direction_map = {
+                    'UP': 'up',
+                    'DOWN': 'down',
+                    'LEFT': 'left',
+                    'RIGHT': 'right'
+                }
+                return direction_map[direction], full_response
+            else:
+                print(f"⚠️  Attempt {attempt + 1}/{max_retries}: Could not parse direction from LLM response. Retrying...")
+        
+        except Exception as e:
+            print(f"⚠️  Attempt {attempt + 1}/{max_retries}: API error: {e}. Retrying...")
+            last_response = str(e)
     
-    full_response = response.choices[0].message.content
-    
-    # Extract the direction from FINAL_RESPONSE
-    match = re.search(r'FINAL_RESPONSE:\s*(UP|DOWN|LEFT|RIGHT)', full_response, re.IGNORECASE)
-    
-    if match:
-        direction = match.group(1).upper()
-        # Convert to lowercase for the shift function
-        direction_map = {
-            'UP': 'up',
-            'DOWN': 'down',
-            'LEFT': 'left',
-            'RIGHT': 'right'
-        }
-        return direction_map[direction], full_response
-    else:
-        raise ValueError(f"Could not parse direction from LLM response: {full_response}")
+    # If all retries failed, raise an exception
+    raise ValueError(f"Could not parse direction from LLM response after {max_retries} attempts. Last response: {last_response}")
 
 
 def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4o-mini", max_moves=1000):
@@ -142,11 +159,13 @@ def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4
             break
     
     # Determine game end reason if not already set
-    if game_end_reason == "unknown":
+    if game_end_reason == "unknown" or game_end_reason == "invalid_move":
         if move_count >= max_moves:
             game_end_reason = "max_moves_reached"
         elif is_game_over(current_state):
             game_end_reason = "no_moves_available"
+        else:
+            game_end_reason = "invalid_move"
     
     # Game over
     print("\n" + "=" * 50)
