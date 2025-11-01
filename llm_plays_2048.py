@@ -135,7 +135,18 @@ def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4
             # Check if move was valid (state changed)
             if new_state == current_state:
                 print("\n⚠️  Invalid move! State didn't change. Game stopped.")
+
                 game_end_reason = "invalid_move"
+                game_log.append({
+                    "game_state": [row[:] for row in current_state],
+                    "action": direction.upper(),
+                    "current_score": get_score(current_state),
+                    "llm_reasoning": llm_response
+                })
+
+                with open(log_file, 'w') as f:
+                    json.dump(game_log, f, indent=2)
+ 
                 break
             
             current_state = new_state

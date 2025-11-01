@@ -77,7 +77,7 @@ def _merge_line(line: List[int]) -> List[int]:
     return merged
 
 
-def shift(state: List[List[int]], direction: str) -> List[List[int]]:
+def shift(state: List[List[int]], direction: str, add_tile=True) -> List[List[int]]:
     """
     Shift all values in the given direction and add a new random tile.
     
@@ -121,7 +121,7 @@ def shift(state: List[List[int]], direction: str) -> List[List[int]]:
         raise ValueError(f"Invalid direction: {direction}. Must be 'left', 'right', 'up', or 'down'")
     
     # Only add a new tile if the state actually changed
-    if new_state != state:
+    if new_state != state and add_tile:
         _add_random_tile(new_state)
     
     return new_state
@@ -158,7 +158,7 @@ def can_move(state: List[List[int]]) -> bool:
         True if any move is possible, False otherwise
     """
     for direction in ['left', 'right', 'up', 'down']:
-        test_state = shift(state, direction)
+        test_state = shift(state, direction, add_tile=False)
         if test_state != state:
             return True
     return False
@@ -195,8 +195,33 @@ if __name__ == "__main__":
     print("Welcome to 2048!")
     print("Commands: w (up), s (down), a (left), d (right), q (quit)")
     
-    current_state = init_grid()
-    display(current_state)
+    current_state = [
+          [
+                  2,
+                          16,
+                                  4,
+                                          2
+                                                ],
+                                                      [
+                                                              8,
+                                                                      4,
+                                                                              0,
+                                                                                      0
+                                                                                            ],
+                                                                                                  [
+                                                                                                          0,
+                                                                                                                  0,
+                                                                                                                          0,
+                                                                                                                                  0
+                                                                                                                                        ],
+                                                                                                                                              [
+                                                                                                                                                      2,
+                                                                                                                                                              0,
+                                                                                                                                                                      0,
+                                                                                                                                                                              0
+                                                                                                                                                                                    ]
+                                                                                                                                                                                        ]
+    print(display(current_state))
     
     while not is_game_over(current_state):
         command = input("\nEnter move: ").lower().strip()
@@ -211,7 +236,7 @@ if __name__ == "__main__":
             new_state = shift(current_state, direction_map[command])
             if new_state != current_state:
                 current_state = new_state
-                display(current_state)
+                print(display(current_state))
             else:
                 print("Invalid move! Try another direction.")
         else:
