@@ -197,7 +197,10 @@ def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4
     Returns:
         Final score
     """
-    client = OpenAI(api_key=api_key, base_url=base_url, http_client=__import__('httpx').Client(verify=False))
+    client = OpenAI(
+            api_key=api_key, base_url=base_url,
+            # http_client=__import__('httpx').Client(verify=False)
+        )
 
     current_state = init_grid()
     game_log = []
