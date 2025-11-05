@@ -16,7 +16,29 @@ from openai import OpenAI
 from game_2048 import init_grid, shift, is_game_over, get_score, display
 
 
-def get_llm_move(client, grid_state, messages, model="gpt-4o-mini", max_retries=5):
+def get_move_tool_schema():
+    """Returns the tool schema for function calling mode."""
+    return {
+        "type": "function",
+        "function": {
+            "name": "make_move",
+            "description": "Make a move in the 2048 game by shifting tiles in the specified direction",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "direction": {
+                        "type": "string",
+                        "enum": ["up", "down", "left", "right"],
+                        "description": "Direction to shift tiles"
+                    }
+                },
+                "required": ["direction"]
+            }
+        }
+    }
+
+
+def get_llm_move(client, grid_state, messages, model="gpt-4o-mini", max_retries=5, use_function_calling=False):
     """
     Get the next move from the LLM with retry logic.
 
@@ -26,16 +48,32 @@ def get_llm_move(client, grid_state, messages, model="gpt-4o-mini", max_retries=
         messages: List of conversation messages (modified in-place)
         model: OpenAI model to use
         max_retries: Maximum number of attempts to get a valid response
+        use_function_calling: If True, use function calling mode; otherwise use text parsing mode
 
     Returns:
-        Tuple of (direction, full_response)
+        Tuple of (direction, response_data)
+        where response_data is either:
+        - text string (text parsing mode)
+        - dict with 'reasoning', 'tool_call' keys (function calling mode)
     """
-    # Use the display function to format the grid state
     grid_display = display(grid_state)
 
-    # If this is the first message, add the system prompt
+    # Prepare prompt based on mode
     if len(messages) == 0:
-        prompt = f"""You are playing the game of 2048. Here are the rules:
+        if use_function_calling:
+            prompt = f"""You are playing the game of 2048. Here are the rules:
+
+2048 is played on a plain 4×4 grid, with numbered tiles that slide in four directions: UP, DOWN, LEFT and RIGHT. The game begins with two tiles already in the grid, having a value of either 2 or 4, and another such tile appears in a random empty space after each turn. Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided. The resulting tile cannot merge with another tile again in the same move.
+
+If a move causes three consecutive tiles of the same value to slide together, only the two tiles farthest along the direction of motion will combine. If all four spaces in a row or column are filled with tiles of the same value, a move parallel to that row/column will combine the first two and last two. Your score is sum of all values in the grid.
+
+Analyze the current grid state and choose the best move using the make_move function.
+
+Here is the current grid state:
+
+{grid_display}"""
+        else:
+            prompt = f"""You are playing the game of 2048. Here are the rules:
 
 2048 is played on a plain 4×4 grid, with numbered tiles that slide in four directions: UP, DOWN, LEFT and RIGHT. The game begins with two tiles already in the grid, having a value of either 2 or 4, and another such tile appears in a random empty space after each turn. Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided. The resulting tile cannot merge with another tile again in the same move.
 
@@ -58,86 +96,123 @@ Here is the current grid state:
 Where the values should be shifted next?"""
         messages.append({"role": "user", "content": prompt})
     else:
-        # For subsequent moves, just show the current grid
         prompt = f"""Here is the current grid state:
 
-{grid_display}
-
-Where the values should be shifted next?"""
+{grid_display}"""
+        if not use_function_calling:
+            prompt += "\n\nWhere the values should be shifted next?"
         messages.append({"role": "user", "content": prompt})
 
     # Retry logic
     last_response = None
     for attempt in range(max_retries):
         try:
-            response = client.chat.completions.create(
-                model=model,
-                messages=messages,
-                temperature=0.7
-            )
+            # Prepare API call parameters
+            api_params = {
+                "model": model,
+                "messages": messages,
+                "temperature": 0.7
+            }
+            
+            if use_function_calling:
+                api_params["tools"] = [get_move_tool_schema()]
+                api_params["tool_choice"] = "auto"
 
-            full_response = response.choices[0].message.content
-            last_response = full_response
+            response = client.chat.completions.create(**api_params)
+            message = response.choices[0].message
 
-            # Extract the direction from FINAL_RESPONSE
-            match = re.search(r'FINAL_RESPONSE:\s*(UP|DOWN|LEFT|RIGHT)', full_response, re.IGNORECASE)
-
-            if match:
-                direction = match.group(1).upper()
-                # Add assistant's response to messages
-                messages.append({"role": "assistant", "content": full_response})
-
-                # Convert to lowercase for the shift function
-                direction_map = {
-                    'UP': 'up',
-                    'DOWN': 'down',
-                    'LEFT': 'left',
-                    'RIGHT': 'right'
-                }
-                return direction_map[direction], full_response
+            if use_function_calling:
+                # Function calling mode
+                reasoning = message.content if message.content else ""
+                
+                if message.tool_calls:
+                    tool_call = message.tool_calls[0]
+                    args = json.loads(tool_call.function.arguments)
+                    direction = args["direction"]
+                    
+                    # Add assistant message with tool call to history
+                    messages.append({
+                        "role": "assistant",
+                        "content": reasoning,
+                        "tool_calls": [{
+                            "id": tool_call.id,
+                            "type": "function",
+                            "function": {
+                                "name": tool_call.function.name,
+                                "arguments": tool_call.function.arguments
+                            }
+                        }]
+                    })
+                    
+                    # Add tool response (will be added after move validation)
+                    # We'll return info needed to add this later
+                    response_data = {
+                        "reasoning": reasoning,
+                        "tool_call": {
+                            "id": tool_call.id,
+                            "name": tool_call.function.name,
+                            "arguments": args
+                        }
+                    }
+                    
+                    return direction, response_data
+                else:
+                    print(f"⚠️  Attempt {attempt + 1}/{max_retries}: No tool call in response. Retrying...")
+                    last_response = reasoning
             else:
-                print(f"⚠️  Attempt {attempt + 1}/{max_retries}: Could not parse direction from LLM response. Retrying...")
+                # Text parsing mode
+                full_response = message.content
+                last_response = full_response
+
+                match = re.search(r'FINAL_RESPONSE:\s*(UP|DOWN|LEFT|RIGHT)', full_response, re.IGNORECASE)
+
+                if match:
+                    direction = match.group(1).lower()
+                    messages.append({"role": "assistant", "content": full_response})
+                    return direction, full_response
+                else:
+                    print(f"⚠️  Attempt {attempt + 1}/{max_retries}: Could not parse direction from LLM response. Retrying...")
 
         except Exception as e:
             print(f"⚠️  Attempt {attempt + 1}/{max_retries}: API error: {e}. Retrying...")
             last_response = str(e)
 
-    # If all retries failed, raise an exception
-    raise ValueError(f"Could not parse direction from LLM response after {max_retries} attempts. Last response: {last_response}")
+    raise ValueError(f"Could not get valid move after {max_retries} attempts. Last response: {last_response}")
 
 
-def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4o-mini", max_moves=1000, max_consecutive_invalid_moves=10, context_window_moves=5):
+def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4o-mini", max_moves=1000, max_consecutive_invalid_moves=10, context_window_moves=5, use_function_calling=False):
     """
     Play a full game of 2048 using LLM and log all moves.
 
     Args:
         api_key: OpenAI API key
+        base_url: Base URL for API
         log_file: Path to the JSON log file
         model: OpenAI model to use
         max_moves: Maximum number of moves to prevent infinite loops
         max_consecutive_invalid_moves: Maximum consecutive invalid moves before stopping
         context_window_moves: Number of valid moves to keep in conversation context
+        use_function_calling: If True, use function calling mode; otherwise use text parsing mode
 
     Returns:
         Final score
     """
-    # Initialize OpenAI client
-    client = OpenAI(api_key=api_key, base_url=base_url)
+    client = OpenAI(api_key=api_key, base_url=base_url, http_client=__import__('httpx').Client(verify=False))
 
-    # Initialize game
     current_state = init_grid()
     game_log = []
     move_count = 0
     game_end_reason = "unknown"
-    messages = []  # Current conversation history (includes invalid moves until cleared)
-    valid_move_history = []  # List of (user_prompt, assistant_response) tuples for valid moves only
+    messages = []
+    valid_move_history = []
     consecutive_invalid_moves = 0
 
-    # Log initial state
+    # Log initial state with mode
     game_log.append({
         "game_state": [row[:] for row in current_state],
         "action": "INITIAL",
-        "current_score": get_score(current_state)
+        "current_score": get_score(current_state),
+        "mode": "function_calling" if use_function_calling else "text_parsing"
     })
 
     # Game loop
@@ -145,12 +220,10 @@ def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4
         try:
             print(f"Move {move_count + 1}, score {get_score(current_state)}, model {model}")
 
-            # Track where the new messages start
             messages_before = len(messages)
 
-            direction, llm_response = get_llm_move(client, current_state, messages, model)
+            direction, llm_response = get_llm_move(client, current_state, messages, model, use_function_calling=use_function_calling)
 
-            # Apply move
             new_state = shift(current_state, direction)
 
             # Check if move was valid (state changed)
@@ -158,62 +231,104 @@ def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4
                 consecutive_invalid_moves += 1
                 print(f"\n⚠️  Invalid move {direction.upper()}! State didn't change. Retrying... ({consecutive_invalid_moves}/{max_consecutive_invalid_moves})")
 
-                # Log invalid move attempt
-                game_log.append({
+                # Prepare log entry
+                log_entry = {
                     "game_state": [row[:] for row in current_state],
                     "action": direction.upper(),
                     "current_score": get_score(current_state),
-                    "llm_reasoning": llm_response,
                     "invalid_move": True
-                })
+                }
+                
+                if use_function_calling:
+                    log_entry["llm_reasoning"] = llm_response.get("reasoning", "")
+                    log_entry["tool_call"] = llm_response.get("tool_call")
+                else:
+                    log_entry["llm_reasoning"] = llm_response
+                
+                game_log.append(log_entry)
 
-                # Check if we've exceeded max consecutive invalid moves
                 if consecutive_invalid_moves >= max_consecutive_invalid_moves:
                     print(f"\n❌ Too many consecutive invalid moves ({max_consecutive_invalid_moves}). Game stopped.")
                     game_end_reason = f"too_many_invalid_moves_{max_consecutive_invalid_moves}"
                     break
 
-                # Add feedback to conversation about the invalid move
-                feedback = f"That move ({direction.upper()}) was invalid - the grid state did not change. This means no tiles could move or merge in that direction. Please choose a different direction where tiles can actually move."
-                messages.append({"role": "user", "content": feedback})
+                # Add feedback for invalid move
+                if use_function_calling:
+                    # Add tool response indicating error
+                    messages.append({
+                        "role": "tool",
+                        "tool_call_id": llm_response["tool_call"]["id"],
+                        "content": f"Error: Invalid move. The grid state did not change. No tiles could move or merge in the {direction.upper()} direction. Please choose a different direction."
+                    })
+                else:
+                    feedback = f"That move ({direction.upper()}) was invalid - the grid state did not change. This means no tiles could move or merge in that direction. Please choose a different direction where tiles can actually move."
+                    messages.append({"role": "user", "content": feedback})
 
-                # Continue to next iteration to retry
                 continue
 
-            # Valid move - reset consecutive invalid moves counter
+            # Valid move
             consecutive_invalid_moves = 0
             current_state = new_state
             move_count += 1
 
-            # Extract the exchange that just happened (user prompt + assistant response)
-            # This should be the last 2 messages added (user prompt + assistant response)
-            if len(messages) >= 2:
-                # Get the user prompt and assistant response for this valid move
-                user_prompt = messages[messages_before]  # The grid state prompt
-                assistant_response = messages[messages_before + 1]  # The LLM's response
-
-                # Add to valid move history
-                valid_move_history.append((user_prompt, assistant_response))
-
-                # Keep only the last N valid moves
-                if len(valid_move_history) > context_window_moves:
-                    valid_move_history = valid_move_history[-context_window_moves:]
-
-                # Reconstruct messages from valid move history only (clears invalid attempts)
-                messages = []
-                for user_msg, assistant_msg in valid_move_history:
-                    messages.append(user_msg)
-                    messages.append(assistant_msg)
+            # Handle valid move history based on mode
+            if use_function_calling:
+                # In function calling mode, add tool response
+                tool_response = {
+                    "role": "tool",
+                    "tool_call_id": llm_response["tool_call"]["id"],
+                    "content": f"Move successful. New score: {get_score(current_state)}"
+                }
+                messages.append(tool_response)
+                
+                # Store the full exchange (user, assistant with tool_call, tool response)
+                if len(messages) >= 3:
+                    user_prompt = messages[messages_before]
+                    assistant_response = messages[messages_before + 1]
+                    tool_resp = messages[messages_before + 2]
+                    
+                    valid_move_history.append((user_prompt, assistant_response, tool_resp))
+                    
+                    if len(valid_move_history) > context_window_moves:
+                        valid_move_history = valid_move_history[-context_window_moves:]
+                    
+                    # Reconstruct messages
+                    messages = []
+                    for user_msg, assistant_msg, tool_msg in valid_move_history:
+                        messages.append(user_msg)
+                        messages.append(assistant_msg)
+                        messages.append(tool_msg)
+            else:
+                # Text parsing mode - keep existing logic
+                if len(messages) >= 2:
+                    user_prompt = messages[messages_before]
+                    assistant_response = messages[messages_before + 1]
+                    
+                    valid_move_history.append((user_prompt, assistant_response))
+                    
+                    if len(valid_move_history) > context_window_moves:
+                        valid_move_history = valid_move_history[-context_window_moves:]
+                    
+                    messages = []
+                    for user_msg, assistant_msg in valid_move_history:
+                        messages.append(user_msg)
+                        messages.append(assistant_msg)
 
             # Log the move
-            game_log.append({
+            log_entry = {
                 "game_state": [row[:] for row in current_state],
                 "action": direction.upper(),
-                "current_score": get_score(current_state),
-                "llm_reasoning": llm_response
-            })
+                "current_score": get_score(current_state)
+            }
+            
+            if use_function_calling:
+                log_entry["llm_reasoning"] = llm_response.get("reasoning", "")
+                log_entry["tool_call"] = llm_response.get("tool_call")
+            else:
+                log_entry["llm_reasoning"] = llm_response
+            
+            game_log.append(log_entry)
 
-            # Save log after each move
             with open(log_file, 'w') as f:
                 json.dump(game_log, f, indent=2)
 
@@ -267,15 +382,22 @@ if __name__ == "__main__":
     parser.add_argument('--base_url', type=str, required=True, help='Base URL')
     parser.add_argument('--api_key', type=str, required=True, help='API key')
     parser.add_argument('--context_window', type=int, default=5, help='Number of valid moves to keep in context (default: 5)')
+    parser.add_argument('--use_function_calling', action='store_true', help='Use native function calling instead of text parsing')
 
     args = parser.parse_args()
+
+    # Prepare log file name with function calling marker
+    model_short = args.model_name.split('/')[-1]
+    fc_suffix = "_fc" if args.use_function_calling else ""
+    log_file = f"game_logs/game_log_{model_short}{fc_suffix}.json"
 
     # Play the game
     play_game_with_llm(
         api_key=args.api_key,
         base_url=args.base_url,
-        log_file=f"game_logs/game_log_{args.model_name.split('/')[1]}.json",
+        log_file=log_file,
         model=args.model_name,
         max_moves=10000,
         context_window_moves=args.context_window,
+        use_function_calling=args.use_function_calling,
     )
