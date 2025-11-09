@@ -12,8 +12,123 @@ import json
 import re
 import io
 import sys
+import base64
 from openai import OpenAI
 from game_2048 import init_grid, shift, is_game_over, get_score, display
+
+# Multimodal support - import on demand
+try:
+    import matplotlib
+    matplotlib.use('Agg')  # Use non-interactive backend
+    import matplotlib.pyplot as plt
+    import matplotlib.patches as mpatches
+    from PIL import Image
+    MULTIMODAL_AVAILABLE = True
+except ImportError:
+    MULTIMODAL_AVAILABLE = False
+
+# Color scheme for tiles (similar to the original 2048 game)
+TILE_COLORS = {
+    0: '#CDC1B4',      # Empty
+    2: '#EEE4DA',      # 2
+    4: '#EDE0C8',      # 4
+    8: '#F2B179',      # 8
+    16: '#F59563',     # 16
+    32: '#F67C5F',     # 32
+    64: '#F65E3B',     # 64
+    128: '#EDCF72',    # 128
+    256: '#EDCC61',    # 256
+    512: '#EDC850',    # 512
+    1024: '#EDC53F',   # 1024
+    2048: '#EDC22E',   # 2048
+    4096: '#3C3A32',   # 4096+
+}
+
+# Text colors
+TILE_TEXT_COLORS = {
+    0: '#CDC1B4',
+    2: '#776E65',
+    4: '#776E65',
+}
+DEFAULT_TEXT_COLOR = '#F9F6F2'
+
+
+def get_tile_color(value):
+    """Get the color for a tile value."""
+    if value in TILE_COLORS:
+        return TILE_COLORS[value]
+    else:
+        return TILE_COLORS[4096]  # Default for values > 2048
+
+
+def get_text_color(value):
+    """Get the text color for a tile value."""
+    if value in TILE_TEXT_COLORS:
+        return TILE_TEXT_COLORS[value]
+    else:
+        return DEFAULT_TEXT_COLOR
+
+
+def render_game_state_image(game_state, score):
+    """
+    Render a game state as an image (without showing previous action).
+
+    Args:
+        game_state: Current game state (4x4 grid)
+        score: Current score
+
+    Returns:
+        Base64-encoded PNG image
+    """
+    if not MULTIMODAL_AVAILABLE:
+        raise ImportError("Multimodal libraries not available. Install matplotlib and Pillow.")
+
+    fig, ax = plt.subplots(figsize=(6, 6.5))
+    ax.clear()
+    ax.set_xlim(0, 4)
+    ax.set_ylim(0, 4)
+    ax.set_aspect('equal')
+    ax.axis('off')
+
+    # Draw grid
+    for i in range(4):
+        for j in range(4):
+            value = game_state[i][j]
+
+            # Draw tile background
+            rect = mpatches.Rectangle((j, 3 - i), 1, 1,
+                                     facecolor=get_tile_color(value),
+                                     edgecolor='#BBADA0',
+                                     linewidth=3)
+            ax.add_patch(rect)
+
+            # Draw tile value
+            if value != 0:
+                text_color = get_text_color(value)
+                fontsize = 40 if value < 100 else (32 if value < 1000 else 24)
+                ax.text(j + 0.5, 3 - i + 0.5, str(value),
+                       ha='center', va='center',
+                       fontsize=fontsize, fontweight='bold',
+                       color=text_color)
+
+    # Add game info (only score, NO action)
+    info_text = f"Score: {score}"
+    ax.text(2, -0.3, info_text, ha='center', va='top',
+           fontsize=14, fontweight='bold', color='#776E65')
+
+    # Convert matplotlib figure to base64-encoded PNG
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png', bbox_inches='tight', dpi=100,
+               facecolor='#FAF8EF', edgecolor='none')
+    buf.seek(0)
+
+    # Encode as base64
+    img_base64 = base64.b64encode(buf.read()).decode('utf-8')
+
+    buf.close()
+    plt.close(fig)
+
+    return img_base64
 
 
 def get_move_tool_schema():
@@ -38,7 +153,7 @@ def get_move_tool_schema():
     }
 
 
-def get_llm_move(client, grid_state, messages, model="gpt-4o-mini", max_retries=5, use_function_calling=False):
+def get_llm_move(client, grid_state, messages, model="gpt-4o-mini", max_retries=5, use_function_calling=False, use_multimodal=False):
     """
     Get the next move from the LLM with retry logic.
 
@@ -49,6 +164,7 @@ def get_llm_move(client, grid_state, messages, model="gpt-4o-mini", max_retries=
         model: OpenAI model to use
         max_retries: Maximum number of attempts to get a valid response
         use_function_calling: If True, use function calling mode; otherwise use text parsing mode
+        use_multimodal: If True, send images instead of text grid representation
 
     Returns:
         Tuple of (direction, response_data)
@@ -56,12 +172,64 @@ def get_llm_move(client, grid_state, messages, model="gpt-4o-mini", max_retries=
         - text string (text parsing mode)
         - dict with 'reasoning', 'tool_call' keys (function calling mode)
     """
-    grid_display = display(grid_state)
+    # Prepare content based on mode
+    if use_multimodal:
+        # Render grid as image
+        img_base64 = render_game_state_image(grid_state, get_score(grid_state))
 
-    # Prepare prompt based on mode
-    if len(messages) == 0:
-        if use_function_calling:
-            prompt = f"""You are playing the game of 2048. Here are the rules:
+        # If this is the first message, add the system prompt
+        if len(messages) == 0:
+            if use_function_calling:
+                text_prompt = """You are playing the game of 2048. Here are the rules:
+
+2048 is played on a plain 4×4 grid, with numbered tiles that slide in four directions: UP, DOWN, LEFT and RIGHT. The game begins with two tiles already in the grid, having a value of either 2 or 4, and another such tile appears in a random empty space after each turn. Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided. The resulting tile cannot merge with another tile again in the same move.
+
+If a move causes three consecutive tiles of the same value to slide together, only the two tiles farthest along the direction of motion will combine. If all four spaces in a row or column are filled with tiles of the same value, a move parallel to that row/column will combine the first two and last two. Your score is sum of all values in the grid.
+
+Analyze the current grid state and choose the best move using the make_move function.
+
+Here is the current grid state (see image below)."""
+            else:
+                text_prompt = """You are playing the game of 2048. Here are the rules:
+
+2048 is played on a plain 4×4 grid, with numbered tiles that slide in four directions: UP, DOWN, LEFT and RIGHT. The game begins with two tiles already in the grid, having a value of either 2 or 4, and another such tile appears in a random empty space after each turn. Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided. The resulting tile cannot merge with another tile again in the same move.
+
+If a move causes three consecutive tiles of the same value to slide together, only the two tiles farthest along the direction of motion will combine. If all four spaces in a row or column are filled with tiles of the same value, a move parallel to that row/column will combine the first two and last two. Your score is sum of all values in the grid.
+
+Your task is to select a direction of the shift. You may think for as long as you like, but then you need to say on a separate from your reasoning line:
+
+FINAL_RESPONSE: <direction of the shift in uppercase>
+
+Example of the response:
+
+I think, I should shift everything to the right.
+
+FINAL_RESPONSE: RIGHT
+
+Here is the current grid state (see image below). Where the values should be shifted next?"""
+
+            content = [
+                {"type": "text", "text": text_prompt},
+                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{img_base64}"}}
+            ]
+        else:
+            # For subsequent moves, just show the current grid
+            text_prompt = "Here is the current grid state (see image below). Where the values should be shifted next?"
+            content = [
+                {"type": "text", "text": text_prompt},
+                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{img_base64}"}}
+            ]
+
+        messages.append({"role": "user", "content": content})
+
+    else:
+        # Use the display function to format the grid state
+        grid_display = display(grid_state)
+
+        # If this is the first message, add the system prompt
+        if len(messages) == 0:
+            if use_function_calling:
+                prompt = f"""You are playing the game of 2048. Here are the rules:
 
 2048 is played on a plain 4×4 grid, with numbered tiles that slide in four directions: UP, DOWN, LEFT and RIGHT. The game begins with two tiles already in the grid, having a value of either 2 or 4, and another such tile appears in a random empty space after each turn. Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided. The resulting tile cannot merge with another tile again in the same move.
 
@@ -72,8 +240,8 @@ Analyze the current grid state and choose the best move using the make_move func
 Here is the current grid state:
 
 {grid_display}"""
-        else:
-            prompt = f"""You are playing the game of 2048. Here are the rules:
+            else:
+                prompt = f"""You are playing the game of 2048. Here are the rules:
 
 2048 is played on a plain 4×4 grid, with numbered tiles that slide in four directions: UP, DOWN, LEFT and RIGHT. The game begins with two tiles already in the grid, having a value of either 2 or 4, and another such tile appears in a random empty space after each turn. Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided. The resulting tile cannot merge with another tile again in the same move.
 
@@ -94,14 +262,14 @@ Here is the current grid state:
 {grid_display}
 
 Where the values should be shifted next?"""
-        messages.append({"role": "user", "content": prompt})
-    else:
-        prompt = f"""Here is the current grid state:
+            messages.append({"role": "user", "content": prompt})
+        else:
+            prompt = f"""Here is the current grid state:
 
 {grid_display}"""
-        if not use_function_calling:
-            prompt += "\n\nWhere the values should be shifted next?"
-        messages.append({"role": "user", "content": prompt})
+            if not use_function_calling:
+                prompt += "\n\nWhere the values should be shifted next?"
+            messages.append({"role": "user", "content": prompt})
 
     # Retry logic
     last_response = None
@@ -180,23 +348,29 @@ Where the values should be shifted next?"""
     raise ValueError(f"Could not get valid move after {max_retries} attempts. Last response: {last_response}")
 
 
-def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4o-mini", max_moves=1000, max_consecutive_invalid_moves=10, context_window_moves=5, use_function_calling=False):
+def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4o-mini", max_moves=1000, max_consecutive_invalid_moves=10, context_window_moves=5, use_function_calling=False, use_multimodal=False):
     """
     Play a full game of 2048 using LLM and log all moves.
 
     Args:
         api_key: OpenAI API key
-        base_url: Base URL for API
+        base_url: API base URL
         log_file: Path to the JSON log file
         model: OpenAI model to use
         max_moves: Maximum number of moves to prevent infinite loops
         max_consecutive_invalid_moves: Maximum consecutive invalid moves before stopping
         context_window_moves: Number of valid moves to keep in conversation context
         use_function_calling: If True, use function calling mode; otherwise use text parsing mode
+        use_multimodal: If True, send images instead of text grid representation
 
     Returns:
         Final score
     """
+    # Check multimodal availability
+    if use_multimodal and not MULTIMODAL_AVAILABLE:
+        raise ImportError("Multimodal mode requires matplotlib and Pillow. Install with: pip install matplotlib Pillow")
+
+    # Initialize OpenAI client
     client = OpenAI(
             api_key=api_key, base_url=base_url,
             # http_client=__import__('httpx').Client(verify=False)
@@ -211,11 +385,19 @@ def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4
     consecutive_invalid_moves = 0
 
     # Log initial state with mode
+    mode_str = []
+    if use_function_calling:
+        mode_str.append("function_calling")
+    else:
+        mode_str.append("text_parsing")
+    if use_multimodal:
+        mode_str.append("multimodal")
+
     game_log.append({
         "game_state": [row[:] for row in current_state],
         "action": "INITIAL",
         "current_score": get_score(current_state),
-        "mode": "function_calling" if use_function_calling else "text_parsing"
+        "mode": "_".join(mode_str)
     })
 
     # Game loop
@@ -225,7 +407,7 @@ def play_game_with_llm(api_key, base_url, log_file="game_log.json", model="gpt-4
 
             messages_before = len(messages)
 
-            direction, llm_response = get_llm_move(client, current_state, messages, model, use_function_calling=use_function_calling)
+            direction, llm_response = get_llm_move(client, current_state, messages, model, use_function_calling=use_function_calling, use_multimodal=use_multimodal)
 
             new_state = shift(current_state, direction)
 
@@ -386,13 +568,15 @@ if __name__ == "__main__":
     parser.add_argument('--api_key', type=str, required=True, help='API key')
     parser.add_argument('--context_window', type=int, default=5, help='Number of valid moves to keep in context (default: 5)')
     parser.add_argument('--use_function_calling', action='store_true', help='Use native function calling instead of text parsing')
+    parser.add_argument('--multimodal', action='store_true', help='Use multimodal mode (send images instead of text)')
 
     args = parser.parse_args()
 
-    # Prepare log file name with function calling marker
+    # Prepare log file name with suffixes for features
     model_short = args.model_name.split('/')[-1]
     fc_suffix = "_fc" if args.use_function_calling else ""
-    log_file = f"game_logs/game_log_{model_short}{fc_suffix}.json"
+    mm_suffix = "_multimodal" if args.multimodal else ""
+    log_file = f"game_logs/game_log_{model_short}{fc_suffix}{mm_suffix}.json"
 
     # Play the game
     play_game_with_llm(
@@ -403,4 +587,5 @@ if __name__ == "__main__":
         max_moves=10000,
         context_window_moves=args.context_window,
         use_function_calling=args.use_function_calling,
+        use_multimodal=args.multimodal,
     )
