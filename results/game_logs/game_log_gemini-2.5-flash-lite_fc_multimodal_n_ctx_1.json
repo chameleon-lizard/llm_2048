@@ -1,0 +1,9059 @@
+[
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "INITIAL",
+    "current_score": 4,
+    "mode": "function_calling_multimodal"
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 6,
+    "llm_reasoning": "The current grid has a 2 in the top-left corner and another 2 directly below it. The best move is to slide all tiles to the left, which will merge these two 2s into a single 4. This move also keeps the tiles organized towards one side of the board, which is a common strategy in 2048.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_s9OiTOUV2NcUY9xEI5c0",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 8,
+    "llm_reasoning": "The grid now has a 4 in the top-left corner and a 2 in the top-middle square. The best move is to slide the tiles to the right. This will place the 4 in the top-middle square and the 2 in the top-right square. Even though this doesn't result in a merge, it helps to consolidate the tiles and prepare for future merges.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_UbgchWNL52QOXibsY0e7",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        2,
+        2
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 10,
+    "llm_reasoning": "The best move is to shift the tiles down. This will merge the two 2s in the middle column into a 4, and the 4 in the top-right corner will move down to the middle-right position. This creates a more consolidated board and sets up potential future merges.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_eBEd9RGhAwqyeT8nrHyU",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 12,
+    "llm_reasoning": "The best move is to shift the tiles to the right. This will merge the two 2s in the bottom row into a 4. The 4 in the middle-right will also move to the right, and the 2 in the top-middle will move to the right as well. This consolidated the tiles and sets up potential future merges.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_vZliHlMjURRVCUgTknuV",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 14,
+    "llm_reasoning": "The best move is to shift the tiles down. This will combine the two 4s in the rightmost column into an 8, and the 2 in the middle-right will also move down. The 2 in the top-middle will also move down. This move consolidates tiles and creates a larger tile in the bottom right.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_7yfEkjRPjAALBPqRtXAC",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 16,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the two 2s in the bottom row into a 4. The 2 in the top-left will move to the left and the 2 in the middle-right will move to the left. This move consolidates tiles and creates a larger tile in the bottom-left.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_yvnR4lRLeCTffECDLuA1",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        0,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 16,
+    "invalid_move": true,
+    "llm_reasoning": "I will shift the tiles down. This will combine the 2 and 4 in the first column into a 6. The 2 in the third column will move down. This move consolidates tiles and creates a larger tile in the first column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Cyl9grqah1e2l1KMjnAe",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        4,
+        2
+      ],
+      [
+        2,
+        0,
+        2,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 18,
+    "llm_reasoning": "I will shift the tiles to the right. This will move the 4 and 2 in the second row to the right, combining them into an 8. The 2 in the first column will move to the right, and the 8 in the fourth column will move to the right. This move consolidates tiles and creates a larger tile in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_87a9KTRWSzUpUkGC7slA",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        8,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 20,
+    "llm_reasoning": "I will shift the tiles to the left. This will move the 4 and 2 in the second row to the left, combining them into an 8. The 2 in the first column will move to the left, and the 8 in the fourth column will move to the left. This move consolidates tiles and creates a larger tile in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_EJ8W4Iz1mi9H4QgeTCuw",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        0
+      ],
+      [
+        8,
+        8,
+        2,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 22,
+    "llm_reasoning": "I will shift the tiles down. This will move the 2 in the second row to the bottom row, combining with the 8 to create a 16. The 4 and 2 in the third row will also move down, combining into an 8. The 4 in the first column will move down, and the 8 in the second column will move down. This move consolidates tiles and creates a larger tile in the bottom row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_FF7jtkI9DCouQtOlgD9P",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 24,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the two 8s into a 16, and also combine the two 2s into a 4. This move aims to consolidate the larger tiles and clear space on the board.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_vo865xOoi08eZ0dKOnRH",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 24,
+    "invalid_move": true,
+    "llm_reasoning": "The current board has a 16 and a 2 in the bottom left, a 4 in the middle left, and a 2 in the top left. To maximize score and consolidate tiles, I will shift the tiles to the left. This will combine the 16 and 2 into a 32.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_KHWB6b7ZeQdEEh6oqLdq",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        16,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 26,
+    "llm_reasoning": "I will try shifting the tiles to the right. This could potentially combine the 2 in the bottom right with other tiles if they move there.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_5RTOc9TifGez6PAFusl2",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 28,
+    "llm_reasoning": "I will try shifting the tiles to the left. This allows the 2s on the right side to combine.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_SKYDA2AZIiKVFzduWHFd",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        2,
+        2,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 32,
+    "llm_reasoning": "I will try shifting the tiles down. This will move the 16 and 2 tiles down, and potentially combine the two 4s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_3RdLDuZNdGDNrFaQlz6h",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 34,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the two 2s into a 4 and move the 8 and 16 tiles to the left.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_coKPJkvK9Q2M2Bub8rFE",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 36,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the 16 and 4 into a 20, and move the 8 and 4 tiles to the left.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_UUqwycR8aFX7Gu7AmLgG",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 36,
+    "invalid_move": true,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the 8 and 2 into a 10, and move the 16 and 4 tiles to the left.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_lmZu1LMRNRl1z10y0Bql",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 36,
+    "invalid_move": true,
+    "llm_reasoning": "I will try shifting the tiles down. This will combine the 16 and 8 into a 24, and the 4 and 2 into a 6.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_M1puDIWKqJfbvFyR1ZT8",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        2,
+        2
+      ],
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        0,
+        0,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 38,
+    "llm_reasoning": "I will try shifting the tiles to the right. This will combine the 4 and 2 into a 6, and the 16 and 4 into a 20.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_JTcINbqxnea29KdRG31M",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 40,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the 4 and 2 into a 6, and the 16 and 4 into a 20.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_9Kczxdso1viSHbUgH8t2",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 40,
+    "invalid_move": true,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the 4 and 2 into a 6, and the 16 and 4 into a 20.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_y2tpSUNyT97xq5i9Mu5d",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        4,
+        0,
+        2
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 42,
+    "llm_reasoning": "I will try shifting the tiles to the down. This will combine the 4 and 4 into an 8, the 8 and 16 into a 24, and the 2 and 4 into a 6.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ekSsIH7iNDjVQFgdaiJI",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        2
+      ],
+      [
+        8,
+        4,
+        2,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 44,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the 8 and 8 into a 16, and the 4 and 4 into an 8.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_02f2Rvz72ZUV7P8Kcda9",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        8,
+        2
+      ],
+      [
+        0,
+        8,
+        4,
+        2
+      ],
+      [
+        0,
+        0,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 46,
+    "llm_reasoning": "I will try shifting the tiles to the right. This will combine the 2 and 2 into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_qBRsxmopIPw3iuf3OYsC",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        2,
+        0
+      ],
+      [
+        8,
+        4,
+        2,
+        2
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 48,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the two 8s into a 16 and the two 4s into an 8.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_YPOz9gqsGhg1c8MMN95O",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        8,
+        2
+      ],
+      [
+        0,
+        8,
+        4,
+        4
+      ],
+      [
+        0,
+        0,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 50,
+    "llm_reasoning": "I will try shifting the tiles to the right. This will combine the two 2s in the second row into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ZljfAdZeLa9dNho8tO6A",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        2,
+        2
+      ],
+      [
+        8,
+        8,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 52,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the two 4s in the third row into an 8, and the two 4s in the bottom row into an 8.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_bic1AveCEV1qBwdHfQ0j",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        8,
+        4,
+        0
+      ],
+      [
+        16,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 54,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the two 8s in the third row into a 16, and the two 2s in the second row into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Rrb3EwetiI9lQIBM80hX",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        2,
+        0
+      ],
+      [
+        32,
+        4,
+        4,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 56,
+    "llm_reasoning": "I will try shifting the tiles to the up. This will combine the two 2s in the first column into a 4, and the two 16s in the first column into a 32.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ktIZy90mTBoXuKprTOzZ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        2,
+        0
+      ],
+      [
+        32,
+        8,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 58,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the two 4s in the second row into an 8.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_6BxuhSYekyfR1V6hFHo4",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        4,
+        8,
+        2
+      ],
+      [
+        0,
+        32,
+        8,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 60,
+    "llm_reasoning": "I will try shifting the tiles to the right. This will combine the two 2s in the second row into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_IYG8dxpBNJAiQEPb032n",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        4,
+        8,
+        2
+      ],
+      [
+        0,
+        32,
+        8,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 60,
+    "invalid_move": true,
+    "llm_reasoning": "I will try shifting the tiles to the right. This will combine the two 2s in the last column into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_cvr5spIxUoDbRviE3hVl",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        2,
+        0
+      ],
+      [
+        32,
+        8,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 62,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the 32 and 4, and the two 8s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_yQpMjh6xkv79Okm0Zo6C",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        2,
+        0
+      ],
+      [
+        32,
+        8,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 64,
+    "llm_reasoning": "I will try shifting the tiles to the left. This will combine the two 2s in the bottom row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_1AdTt6zdevIg5rjFDMNE",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        4,
+        8,
+        2
+      ],
+      [
+        2,
+        32,
+        8,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 66,
+    "llm_reasoning": "I will try shifting the tiles to the right. This will combine the two 2s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Zdo4iZoocMSoBwiSwdnZ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        4,
+        8,
+        2
+      ],
+      [
+        2,
+        32,
+        8,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 66,
+    "invalid_move": true,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the two 4s in the last column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_pbwMnOGsGmtYNFhlVGTG",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        0,
+        4
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 68,
+    "llm_reasoning": "I will shift the tiles down. This will combine the two 4s in the last column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_HMxOmTrlnQFjqQllafO9",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 70,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the 32 and 16 tiles, and the 8 tile.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_rKQ3Mq6nHBqK4JY6kSqu",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 70,
+    "invalid_move": true,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the two 2s in the first column, and also combine the 32 and 16 tiles in the last row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_KLwNCYy4x2s9QFu6fMoJ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        2
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 72,
+    "llm_reasoning": "I will shift the tiles down. This will combine the 2 and 8 tiles in the first column, and also combine the 32 and 16 tiles.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_5TfJ0tFFbx7qrKUzpzJm",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        2,
+        2
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 74,
+    "llm_reasoning": "I will shift the tiles down. This will combine the 4 and 8 tiles in the first column, and also the 2 and 32 tiles in the last row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_2MzVaOvvECyD1QQauqUi",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        8,
+        4
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 76,
+    "llm_reasoning": "I will shift the tiles right. This will combine the two 2 tiles in the third row, and also the 2 and 2 tiles in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_iNvhWNpBWgwm3fAyq7zw",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        8,
+        8
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 78,
+    "llm_reasoning": "I will shift the tiles down. This will combine the 4 and 4 tiles in the second row, and also the 8 and 8 tiles in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_nGydIc4bo4J2SLBGQEZa",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        16
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 80,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the two 8s in the second row into a 16, and the 16 and 8 in the third row into a 24.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_nd9bnhe3s4ZZICj2a4QJ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        16
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 82,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the two 2s in the first row into a 4, and the 16 and 8 in the second row into a 24.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_GqFZXzf3PgrQurYkIIQ5",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        16
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 82,
+    "invalid_move": true,
+    "llm_reasoning": "I will shift the tiles down. This will combine the 2 and 16 in the third row into a 18, and the 32 and 16 in the fourth row into a 48.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Y5b7gK07XcU7lnswEJrh",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        16,
+        0,
+        0
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 86,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the 2 and 32 in the fourth row into a 34, and the 2 and 16 in the third row into an 18.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_YJnps2zzQrvBjY1ko6yv",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        16,
+        0,
+        0
+      ],
+      [
+        2,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 86,
+    "invalid_move": true,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the 2 and 4 in the second row into a 6, and the 2 and 16 in the third row into an 18.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_8LHRviFkmheAeDt7toxv",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        0,
+        2
+      ],
+      [
+        2,
+        16,
+        0,
+        0
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 88,
+    "llm_reasoning": "I will shift the tiles to the down. This will combine the 4 and 2 in the first column into an 6, and the 2 and 2 in the first column into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_FNBm72Cd2G7xGsSt5CZP",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        0,
+        2,
+        2,
+        16
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 90,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the 4 and 4 in the first row into an 8, and the 2 in the first column into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_dCBTSR4OLbvjRYe0IITD",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        16
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 92,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the two 2s in the second row into a 4, and the 8 and 2 in the first row into a 10.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_1bCVpScqMsDZeZyQQJ5B",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        16
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 92,
+    "invalid_move": true,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the 8 and 2 in the first row into a 10, and the 4 and 16 in the second row into a 20.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_UAZ60bMOuCKH7kHFiNek",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        16
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 92,
+    "invalid_move": true,
+    "llm_reasoning": "I will shift the tiles down. This will combine the 4 and 32 in the first column into a 36, and the 16 and 8 in the last column into a 24.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_fQJkbWEVhS3gTdXRsUYe",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        16,
+        0
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 94,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the 2 and 4 in the second row into a 6, and the 16 and 8 in the third row into a 24.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_L3wYHPJWsWrQP0yFXtxS",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        2,
+        0,
+        2
+      ],
+      [
+        2,
+        4,
+        16,
+        0
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 96,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the 8 and 2 in the second row into a 10, and the 4 and 32 in the third row into a 36.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ef3HKWGEBFa4xMHnrSwQ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        8,
+        4
+      ],
+      [
+        2,
+        2,
+        4,
+        16
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 98,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the 16 and 8 in the last row into a 24, and the 16 and 2 in the second row into a 18.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_FQx5JdYPTwH4zNC1zqex",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        4,
+        0,
+        2
+      ],
+      [
+        4,
+        4,
+        16,
+        0
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 100,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the 2 and 2 in the third row into a 4, and the 4 and 16 in the third row into a 20.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_T3OgfQOHbS6hKapFowXa",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        4,
+        0,
+        2
+      ],
+      [
+        0,
+        8,
+        4,
+        2
+      ],
+      [
+        0,
+        0,
+        8,
+        16
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 104,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the 4 and 16 in the third row into a 20, and the 8 and 4 in the second row into a 12.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_J8bzvE5nvEkf35tgcRVw",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        4,
+        2
+      ],
+      [
+        0,
+        8,
+        4,
+        2
+      ],
+      [
+        0,
+        0,
+        8,
+        16
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 106,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the 8 and 16 in the third row into a 24, and the 4 and 2 in the second row into a 6.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_7AjXwCzJpVAQen8tw6jy",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        4,
+        2
+      ],
+      [
+        0,
+        8,
+        4,
+        2
+      ],
+      [
+        0,
+        0,
+        8,
+        16
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 106,
+    "invalid_move": true,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the 8 and 16 in the third row into a 24, and the 2 and 4 in the first row into a 6.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_3FIGjQ9TqGE8dmcuZUGY",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        8,
+        4
+      ],
+      [
+        0,
+        8,
+        8,
+        16
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 108,
+    "llm_reasoning": "I will shift the tiles to the down. This will combine the 4 and 8 in the first column into an 12, and the 2 and 2 in the last column into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Qitb2DZRJC6bwd2HIZBR",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        4,
+        0
+      ],
+      [
+        16,
+        16,
+        0,
+        0
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 110,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the two 8s in the third row into a 16, and the two 8s in the second row into a 16.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_30X4tslMevmENleL5Say",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        8,
+        4,
+        0
+      ],
+      [
+        32,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 112,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the two 2s in the first row into a 4, and the two 16s in the third row into a 32.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_6lYtKNImzbmleDZIB3La",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        4,
+        2
+      ],
+      [
+        0,
+        2,
+        8,
+        4
+      ],
+      [
+        2,
+        0,
+        0,
+        32
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 114,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the 2 in the first row with the 2 in the second row (which will move to the first column), and also combine the 4 in the second row with the 4 in the last row (which will move to the third column).\n",
+    "tool_call": {
+      "id": "tool_0_make_move_IeqgUxwX61Sf2caUfgKm",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        4,
+        0
+      ],
+      [
+        2,
+        32,
+        2,
+        0
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 116,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the 4 and 2 in the first row, and the 8 and 4 tiles in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_AyDzVfprlGtw6I0ONmg8",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        4,
+        0
+      ],
+      [
+        2,
+        32,
+        2,
+        0
+      ],
+      [
+        4,
+        32,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 116,
+    "invalid_move": true,
+    "llm_reasoning": "I will shift the tiles to the left. This will combine the two 2s in the third row and the 4 and 32 in the fourth row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_orPxXt8ujX2xM3dXD5r0",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        4,
+        2,
+        4,
+        0
+      ],
+      [
+        4,
+        8,
+        2,
+        0
+      ],
+      [
+        4,
+        64,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 118,
+    "llm_reasoning": "I will shift the tiles down. This will combine the 4 and 2 in the first column, and the 8 and 32 in the second column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_A0juY1EHqW33XMwqenxv",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        4,
+        2,
+        4
+      ],
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        4,
+        64,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 120,
+    "llm_reasoning": "I will shift the tiles to the right. This will combine the 4 and 2 in the second row, and the 2 and 4 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_1n7ZclA2REjOOMABOXxL",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        4,
+        2,
+        4
+      ],
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        4,
+        64,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 120,
+    "invalid_move": true,
+    "llm_reasoning": "The current grid has tiles in the following positions:\n- Row 1: empty, empty, empty, 2\n- Row 2: empty, 4, 2, 4\n- Row 3: 2, 4, 8, 2\n- Row 4: 4, 64, 16, 8\n\nI will shift the tiles to the right. This will combine the 4 and 2 in the second row, and the 2 and 4 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_EvqUzc151f4RH6HmAMPL",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        4
+      ],
+      [
+        2,
+        8,
+        8,
+        2
+      ],
+      [
+        4,
+        64,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 122,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the 4 and 2 in the third column, and the 8 and 2 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_InfFTah5cffDX3Y3QNta",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        16,
+        2,
+        0
+      ],
+      [
+        4,
+        64,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 124,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the two 8s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_TeOSbvCFJeDoNN1roHQs",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        16,
+        2,
+        0
+      ],
+      [
+        4,
+        64,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 124,
+    "invalid_move": true,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the two 2s in the third row and the 4 and 2 in the first row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_I5hqnMNT5Q0VigRpBPME",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        0,
+        2
+      ],
+      [
+        4,
+        16,
+        2,
+        0
+      ],
+      [
+        4,
+        64,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 126,
+    "llm_reasoning": "I will now shift the tiles to the down. This will combine the 4 and 2 in the first column, and the 2 and 4 in the second column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_W6VPoQQfHukf8v2IoNPX",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        2,
+        4,
+        16,
+        2
+      ],
+      [
+        4,
+        64,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 128,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the two 4s in the second row, and the two 16s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_S4gIFORa1fRXj0LKBuyE",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        2,
+        4,
+        16,
+        2
+      ],
+      [
+        4,
+        64,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 128,
+    "invalid_move": true,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the two 2s in the second row, and the two 16s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_mlHupfnkzi1zsKgcXfgg",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        4,
+        64,
+        32,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 130,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the 4 and 64 in the first column, and the 16 and 16 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_F9qqczOF5rTsJ0kcXdFa",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        4,
+        64,
+        32,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 132,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the 4 and 64 in the first column, and the 8 and 32 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_XZiNMFxXlqlY6pxIsiIO",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        4
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        4,
+        64,
+        32,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 134,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the 2 and 4 in the first column, and the 2 and 8 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_vorwWz23qmRe9ps1FLYZ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        8
+      ],
+      [
+        4,
+        64,
+        32,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 138,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the 4 and 8 in the second column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_7dYp9PRdBHVYWueBud48",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        4,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        0
+      ],
+      [
+        4,
+        64,
+        32,
+        16
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 140,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the two 8s in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_krVOxlgolNsxMlKw5kba",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        4,
+        2,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        0
+      ],
+      [
+        4,
+        64,
+        32,
+        16
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 142,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the two 8s in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_tV5kgkbTqlhY7W8zIC1c",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        4
+      ],
+      [
+        2,
+        0,
+        4,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        8
+      ],
+      [
+        4,
+        64,
+        32,
+        16
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 144,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the two 4s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ETbTpKfEeDDmASdlCY2R",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        2,
+        4
+      ],
+      [
+        0,
+        2,
+        4,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        8
+      ],
+      [
+        4,
+        64,
+        32,
+        16
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 146,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the two 4s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_HmRCAuwQ5vdFtK1UHCqr",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        4,
+        4
+      ],
+      [
+        0,
+        2,
+        4,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        8
+      ],
+      [
+        4,
+        64,
+        32,
+        16
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 148,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the two 2s in the first row and the two 4s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_YtPl0buI6T8bi3oiOxGp",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        2,
+        8
+      ],
+      [
+        0,
+        2,
+        4,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        8
+      ],
+      [
+        4,
+        64,
+        32,
+        16
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 150,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the two 4s in the first row and the two 2s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_qYcCbEdSJUf1ay0ihXcd",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        8
+      ],
+      [
+        2,
+        0,
+        2,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        8
+      ],
+      [
+        4,
+        64,
+        32,
+        16
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 152,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the two 2s in the first column and the two 4s in the second column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_5xpCXsHWSL6PaOclShCP",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        8
+      ],
+      [
+        0,
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        2,
+        4,
+        16
+      ],
+      [
+        4,
+        64,
+        32,
+        16
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 154,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the two 2s in the second row and the two 8s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_sLUAVj7zJyl5SkU7nMJG",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        8
+      ],
+      [
+        0,
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        2,
+        4,
+        16
+      ],
+      [
+        4,
+        64,
+        32,
+        16
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 154,
+    "invalid_move": true,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the two 2s in the second row and the two 16s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_DIHK1Bakt9KYn7UZfrlx",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        4,
+        8
+      ],
+      [
+        2,
+        2,
+        4,
+        4
+      ],
+      [
+        4,
+        64,
+        32,
+        32
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 156,
+    "llm_reasoning": "I will now shift the tiles to the down. This will combine the 4 and 8 in the third column, and the 16 and 16 in the fourth column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_tF7XEsvRCWkSyItsxFDE",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        4,
+        64,
+        64,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 158,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the 2 and 2 in the first row, and the 4 and 4 in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_4vvXXcwWBko2TAR6MBHi",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        4,
+        128,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 160,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the two 64s into a 128, and the two 8s into a 16.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_oG6uvSYeqFi683tytIqK",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        2,
+        0
+      ],
+      [
+        8,
+        128,
+        2,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 162,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the two 8s into a 16.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ewffdTEMZe7HHKjJXZXs",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        0,
+        2
+      ],
+      [
+        8,
+        128,
+        4,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 164,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the 4 and 8 into a 12 and the two 2s into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_NG8RgJQoksiiS760nGK5",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        2,
+        0
+      ],
+      [
+        8,
+        128,
+        4,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 166,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the two 2s into a 4 and the 4 and 16 into a 20.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_INjYd9KOD2nScGmfSoNT",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        2,
+        0
+      ],
+      [
+        8,
+        128,
+        4,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 168,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the 4 and 16 into a 20 and the 2 and 4 into a 6.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_11Xdv6Rp95fmVPlcmxjd",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        4,
+        4,
+        16,
+        2
+      ],
+      [
+        0,
+        8,
+        128,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 172,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the 2 and 4 into a 6, and the 128 and 4 into a 132.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Mvp2q5fprhWMQQtPrpTg",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        8,
+        16,
+        2,
+        0
+      ],
+      [
+        8,
+        128,
+        4,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 174,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the 4 and 4 into an 8, and the 128 and 4 into a 132.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_NOLyp1pd87CJDcT2Y8AZ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        16,
+        2,
+        4
+      ],
+      [
+        8,
+        128,
+        4,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 178,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the 8 and 16 into a 24, and the 128 and 4 into a 132.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Y4wh5c2DjZpGTVYLo4Wh",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        16,
+        2,
+        4
+      ],
+      [
+        8,
+        128,
+        4,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 178,
+    "invalid_move": true,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the 4 and 4 into an 8, and the 8 and 16 into a 24.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ZvdxeZN0GURH2h6cDRqK",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        8,
+        16,
+        2,
+        0
+      ],
+      [
+        16,
+        128,
+        4,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 180,
+    "llm_reasoning": "I will now shift the tiles down. This will combine the 4 and 4 into an 8, and the 8 and 8 into a 16.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_CkTHrEj02pjD9OzHPD5n",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        16,
+        2,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 182,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the 16 and 128 into a 144, and the 4 and 4 into an 8.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_HTCXD3pkDfzfT9pNo7iU",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        16,
+        2,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 182,
+    "invalid_move": true,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the 8 and 16 into a 24, and the 2 and 8 into a 10.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_5ie9v6eaWO1gpTWOhLY5",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        16,
+        2,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 182,
+    "invalid_move": true,
+    "llm_reasoning": "I will now shift the tiles to the down. This will combine the 2 and 2 into a 4, and the 8 and 8 into a 16.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_uJG2ZDlLP5Smw4jou1CZ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        8,
+        16,
+        2
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 184,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the 2 and 2 into a 4, and the 16 and 8 into a 24.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_NxOK01RJwhDdT31SH79w",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        8,
+        16,
+        2
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 184,
+    "invalid_move": true,
+    "llm_reasoning": "I will now shift the tiles to the right. This will combine the 2 and 2 into a 4, and the 16 and 8 into a 24.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ZYQyoNQQdb6POBLAfrfO",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        16,
+        2,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 186,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the 16 and 8 into a 24, and the 2 and 2 into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_oJyeAv9oZLI512R7zPqH",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        8,
+        16,
+        2,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 188,
+    "llm_reasoning": "I will now shift the tiles to the left. This will combine the 16 and 8 into a 24, and the 2 and 2 into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_YAF9KmxVxxyr3iWEkPuu",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        8,
+        16,
+        2
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 190,
+    "llm_reasoning": "The tiles should be shifted to the right. This will combine the 2 and 2 into a 4, and the 8 and 2 into a 10. The 128 and 16 will also combine.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_KI9Jjj7j42mT3uaT03eK",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        2,
+        8,
+        16,
+        2
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 192,
+    "llm_reasoning": "The tiles should be shifted to the right. This will combine the 2 and 2 into a 4, and the 8 and 2 into a 10. The 128 and 16 will also combine.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_NWhJ1XvASQ06zQm12E1e",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        0,
+        2
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        16,
+        2
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 194,
+    "llm_reasoning": "The tiles should be shifted to the left. This will combine the 2 and 8 into a 10, and the 16 and 2 into an 18. The 128 and 16 will also combine.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Iut2fG8SMb1odrhIFPIm",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        2,
+        2
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        16,
+        2
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 196,
+    "llm_reasoning": "The tiles should be shifted to the left. This will combine the 2 and 4 into a 6, and the 16 and 2 into an 18. The 128 and 8 will also combine.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_WtovKVCHYW5aNlYLdVkW",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        2,
+        4,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        2,
+        8,
+        16,
+        2
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 198,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This move will combine the two 2s in the first row into a 4, and the two 2s in the last row into a 4. The 8 and 16 in the third row will also combine.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_fOMr2znDTsk9ZW7ay3Wq",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        16,
+        2
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 200,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This move will combine the two 2s in the first row into a 4, and the two 4s in the first row into an 8. The 16 in the third row will also combine with the 8.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_1jF1pBLM0UcovI0WSbxr",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        16,
+        2
+      ],
+      [
+        16,
+        128,
+        8,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 200,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This move will combine the two 4s in the first column into an 8, and the two 2s in the third row into a 4. The 16 in the third row will also combine with the 8.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_yrZjn2M2iKKax2aRt41z",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        8,
+        2,
+        0
+      ],
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        16,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 202,
+    "llm_reasoning": "I recommend shifting the tiles down. This move will combine the two 2s in the third column into a 4, and the two 8s in the second column into a 16. The 128 in the third row will also combine with the 16.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_CHOLP3XLy9QOHqsy2WAQ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        2,
+        2,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 204,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This move will combine the two 8s in the first row into a 16, and the two 2s in the second row into a 4. The 16 in the third row will combine with the 8.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_IlSoeVvY8jOOKpKyIBuM",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        0,
+        2
+      ],
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        8,
+        16,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 206,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This move will combine the two 2s in the third row into a 4, and the two 8s in the first and second rows will combine with the 2s in the third row to form 16s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_VGs4aUzsz35m17CqCFiZ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        0,
+        0
+      ],
+      [
+        8,
+        2,
+        0,
+        2
+      ],
+      [
+        4,
+        8,
+        16,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 208,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This move will combine the two 8s in the first column into a 16, and the two 2s in the second column will combine into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_333pQdJih5zCB1XZ4h0N",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        8,
+        4
+      ],
+      [
+        0,
+        0,
+        8,
+        4
+      ],
+      [
+        0,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 210,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 16 and 8 in the third row into a 24, and the 4 in the last row will move to the right.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_eUp3FX7y7c4vu0upi4Wl",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        8,
+        4
+      ],
+      [
+        0,
+        2,
+        8,
+        4
+      ],
+      [
+        0,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 212,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 8 and 4 in the first row into a 12, and the 8 and 4 in the second row into a 12.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_lkR78wP82guX4qh5LOF2",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        0
+      ],
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        4,
+        8,
+        16,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 214,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the first two rows into 4s, and the two 8s in the first two columns into 16s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_mwe6hlNyqzynFwN3w9VC",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        0
+      ],
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        4,
+        8,
+        16,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 214,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will allow the 2 in the second row, fourth column to merge with the 2 in the third row, fourth column, creating a 4. It will also shift the 16 in the third row, third column to the left, merging with the 8 in the third row, second column, creating a 16.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_q87IVF8pkS366ylDyph4",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        2,
+        8,
+        4
+      ],
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        0,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 216,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 4s in the first row into an 8, and the two 4s in the second row into an 8. It will also combine the 16 in the third row, third column with the 8 in the fourth row, third column, creating a 24.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_bB5qqCxNyw1IO5pTfoDZ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        4,
+        8,
+        16,
+        0
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 218,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the first row into a 4, and the two 2s in the second row into a 4. It will also combine the 4 and the 8 in the third row, creating a 12.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_eUxcqdy0uc5Xgwbvx6Bp",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 220,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 4s in the first row into an 8, and the two 2s in the second row into a 4. It will also combine the 4 and the 8 in the third row, creating a 12.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_P049FDHn6zljR4EXp4uZ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        8,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 220,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. The 16 in the bottom right corner will combine with the 8 to its left, and the 8 in the third row will combine with the 4 to its left. This will create a larger tile and clear up some space.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_LlpzhtCKxiXR9va2jIP0",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        0,
+        4
+      ],
+      [
+        4,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 222,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 8s in the first column into a 16, and the 4 and 8 in the second column into a 12. It will also combine the 2 and 4 in the third column into a 6.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_F7VCRXdVzSNcdayfLbO1",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        16,
+        0,
+        4
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 224,
+    "llm_reasoning": "I recommend shifting the tiles down. This allows the 4s in the second row to combine, and the 8 and 16 in the third row to combine. It also sets up the 128 to combine with another tile if one appears.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_COqZS8wmhNtIdEAQEFja",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        16,
+        4,
+        0
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 226,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 16s in the second row, and the two 4s in the third row. It will also bring the 128 closer to other tiles.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_eaSgDLPiEkOGB0t0Bc6I",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        16,
+        4,
+        0
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 228,
+    "llm_reasoning": "I recommend shifting the tiles to the left again. This will combine the two 2s in the top row, and the two 16s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_3fME2qOMifyxU5ZxRHPg",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        4,
+        2
+      ],
+      [
+        0,
+        2,
+        16,
+        4
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 230,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 4 and 2 in the top row and the 4 and 8 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_dHh9dVmnVZQVoKg1OA5y",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        2,
+        2
+      ],
+      [
+        2,
+        16,
+        4,
+        0
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 232,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 4 and 2 in the top row and the 4 and 8 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_dJIBhdFt5WC9GN6Ce931",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        4,
+        4
+      ],
+      [
+        0,
+        2,
+        16,
+        4
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 236,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2s in the top row and the 8 and 16 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_DjW1kRp93Fzi2upBpUWg",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        2
+      ],
+      [
+        2,
+        16,
+        4,
+        0
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 238,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will allow you to combine the 4s in the top row and the 16s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_EWj0PFNyKfsPfLdJYqbi",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        2
+      ],
+      [
+        2,
+        2,
+        16,
+        4
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 240,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2s in the top row and the 16s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_r7aUyYpa0Cny3AijsRqA",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        4,
+        8,
+        2
+      ],
+      [
+        2,
+        4,
+        16,
+        4
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 244,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 4s in the top-left and bottom-left corners, and the 2s in the second column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_LvDmh1NiyMeTiwrTbRIz",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        8,
+        2
+      ],
+      [
+        2,
+        4,
+        16,
+        4
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 246,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 8 with the 16 in the third column, and the 4 with the 16 in the fourth column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_vii8h9ylendo3DScHxJO",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        16,
+        2,
+        2
+      ],
+      [
+        2,
+        4,
+        16,
+        4
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 248,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will allow the 2s in the first column to combine, and the 8s in the second column to combine.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_zzMs15CvrbAZgPNbg3ms",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        2,
+        16,
+        4
+      ],
+      [
+        2,
+        4,
+        16,
+        4
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 250,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the top row, and the two 4s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_C7ZnEZ65reMWQyeEkSVA",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        16,
+        4
+      ],
+      [
+        2,
+        4,
+        16,
+        4
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 252,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the top row, and the two 4s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_hZEvb7cQq1RAaqEEMq7s",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        16,
+        4
+      ],
+      [
+        2,
+        4,
+        16,
+        4
+      ],
+      [
+        8,
+        4,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 252,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 4s in the second row, and the 16 and 4 in the bottom row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_1bXmdWy9uKjRrYPQVCgN",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        4,
+        4,
+        32,
+        8
+      ],
+      [
+        8,
+        8,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 254,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 8s in the third column, and the 4s in the second column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ln02JXmojaRJ4MdcZbwh",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        4,
+        4,
+        32,
+        8
+      ],
+      [
+        8,
+        8,
+        8,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 254,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 8s in the third row, and potentially create more opportunities for merges.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_sC9CobstTltwk8txvUVZ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        8,
+        32,
+        8
+      ],
+      [
+        0,
+        8,
+        16,
+        16
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 256,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 4s in the second column, and the 8s in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_AQ0IHVtRciczHIotdAZ9",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        32,
+        8,
+        0
+      ],
+      [
+        8,
+        32,
+        2,
+        0
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 258,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 8s in the second row and the two 16s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_XyFxjdlJmkX8nPr5WiOj",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        32,
+        8,
+        0
+      ],
+      [
+        8,
+        32,
+        2,
+        0
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 258,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 32s in the second and third rows.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_l4tRjUOoGNapfb42AEUn",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        4,
+        0,
+        8,
+        0
+      ],
+      [
+        16,
+        64,
+        2,
+        0
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 260,
+    "llm_reasoning": "Given that the left move was invalid, I recommend shifting the tiles down. This will combine the two 8s in the first column and the two 16s in the first column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_AypV0csWs4VwUzm61z6l",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        8
+      ],
+      [
+        0,
+        16,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 262,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 16s in the bottom row into a 32, and the two 2s in the rightmost column into a 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_mPjoBhaHD3fAsQgPFj9A",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        8
+      ],
+      [
+        0,
+        16,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 262,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2 and 4 in the second row to form an 8, and the 2 and 8 in the third row to form a 10.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_PbCaZMc0Ac83rC8JKyis",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        8
+      ],
+      [
+        0,
+        16,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 262,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the two 16s in the bottom left corner, and the two 2s in the middle right column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ohGSCDVFCfuJcnsW93sd",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        0
+      ],
+      [
+        16,
+        64,
+        2,
+        2
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 264,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 16 and 128 in the bottom row, and the 16 and 64 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_oZ0HFMQfoC6Pe3cNHhZr",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        8
+      ],
+      [
+        2,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 266,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the third row, and the 4 and 8 in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_9sUnncx1owYQYRSJfY6d",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        0
+      ],
+      [
+        2,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 268,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 16s in the third row, and the two 4s in the fourth row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_TP6mtkjJwAREp5dblmH0",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        0
+      ],
+      [
+        2,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 270,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the first row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_yUpdWHzjaqOOsCVe4F4t",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        0
+      ],
+      [
+        2,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 270,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the first row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_XZEMXMnMGcCrZRUWz5ZC",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        2,
+        0
+      ],
+      [
+        4,
+        4,
+        8,
+        0
+      ],
+      [
+        4,
+        16,
+        64,
+        0
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 272,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the two 16s in the bottom row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_wvahRfe46xUFhkQQcF4z",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        2,
+        8,
+        8
+      ],
+      [
+        0,
+        4,
+        16,
+        64
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 274,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the top row and the two 4s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_hpWMF3SRvYhvHtS4riLK",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        16,
+        0,
+        2
+      ],
+      [
+        4,
+        16,
+        64,
+        0
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 276,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 8s in the second row and the 4 with the 8 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Kku2idKbGny74JseCakZ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        2,
+        16,
+        2
+      ],
+      [
+        0,
+        4,
+        16,
+        64
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 278,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the second row and the 8 with the 16 in the bottom row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_c2T6PKPeYayhPt1y5nao",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        4
+      ],
+      [
+        4,
+        2,
+        16,
+        2
+      ],
+      [
+        0,
+        4,
+        16,
+        64
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 282,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the second row and the 8 with the 16 in the bottom row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_PY6jGotnkdfZALlC6Yar",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        2,
+        0
+      ],
+      [
+        4,
+        2,
+        16,
+        2
+      ],
+      [
+        4,
+        16,
+        64,
+        0
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 284,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 16s in the second row and the two 4s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_WUy00gE0sGK2vXxsDD15",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        4,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        16,
+        0
+      ],
+      [
+        8,
+        16,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 286,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 2 and 4 in the first column, and the 16 and 64 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_lAHW2OCqvmI0CPEWIxPN",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        4,
+        4
+      ],
+      [
+        0,
+        2,
+        4,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 288,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2s in the first row and the 8 and 16 in the third row, and the 16 and 8 in the fourth row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_xGOF5ltKcsKLTzlUwSLJ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        4,
+        16,
+        0
+      ],
+      [
+        8,
+        16,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 290,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 4s in the first row, the 2 and 4 in the second row, and the 16 and 8 in the fourth row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_uhZgp74ZvwwfECJi1Fst",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        16,
+        0
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 292,
+    "llm_reasoning": "I recommend shifting the tiles to the down. This will combine the two 8s in the first column, and the two 2s in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_YoRpHGaFADw0WTVSs8Go",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        4,
+        2,
+        4,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 296,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 16 and 8 in the bottom row, and the 16 and 4 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_QRKUlHBzJOQ0QiUgNFer",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        8,
+        2
+      ],
+      [
+        4,
+        2,
+        4,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 296,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 8 and 2 in the top row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_sPX2ZFMPrvgF8RT7pazr",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        2,
+        0
+      ],
+      [
+        4,
+        2,
+        4,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 298,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 4 and 16 in the second row, and the 8 and 16 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_USGRd3kQwyCWKYhtzaYS",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        2,
+        0
+      ],
+      [
+        4,
+        2,
+        4,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 300,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the first row and the 4 and 16 in the second row, and the 8 and 16 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_6neHpJZfjkUlNej4YCO3",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        2,
+        0
+      ],
+      [
+        4,
+        2,
+        4,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 300,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 8 and 4 in the first row, the 4 and 2 in the second row, and the 8 and 16 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_MmcQFTrNhHXEM8FPaXTt",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        2,
+        0
+      ],
+      [
+        4,
+        2,
+        4,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 300,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 8 and 4 in the first column, the 4 and 2 in the second column, and the 2 and 4 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_IL9DIfe08WgCHBOxWYHA",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        4,
+        2
+      ],
+      [
+        4,
+        2,
+        4,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 304,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 16 and 4 in the second row, and the 16 and 8 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_s9vORtD01M5EX9ata8ZL",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        4,
+        2
+      ],
+      [
+        4,
+        2,
+        4,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 304,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 4s in the first row, and the 16s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_EeTPsE11Zc1y17EjHhPa",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        4,
+        2
+      ],
+      [
+        4,
+        2,
+        4,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 304,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 4 and 2 in the first row, and the 16 and 8 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_VkiWHwzaRi1ot1NLXXWL",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        0,
+        2
+      ],
+      [
+        8,
+        2,
+        8,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 306,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 4s in the first column, and the 16s in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_5P7DTPIVUBlSUIto4mwt",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        2,
+        8,
+        2
+      ],
+      [
+        8,
+        2,
+        8,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 308,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 8s in the second row, and the two 16s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_vF3nQp7GFRQj02GRfiUY",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        8,
+        2,
+        8,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 310,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the first row and the two 8s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_PIVaAEpcWm3XS8WSOOHH",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        8,
+        2,
+        8,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 310,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 8s in the second row and the 16 and 8 in the last row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_QNrjYRdYe3eVgZ9ikJ0H",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        8,
+        2,
+        8,
+        16
+      ],
+      [
+        8,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 310,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the first row and the two 8s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_vxgnaAhjJXGjx5Ead41S",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        4,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        16,
+        16
+      ],
+      [
+        16,
+        16,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 312,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the two 8s in the first column, and the 16 and 8 in the last column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_UOgQflWdPa24V0mMRwdF",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        4,
+        4
+      ],
+      [
+        0,
+        0,
+        4,
+        32
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 314,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the top row, the two 16s in the second row, and the two 16s in the bottom row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_7lwemt6w1x3qA93GzUd9",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        8
+      ],
+      [
+        0,
+        2,
+        4,
+        32
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 316,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 4s in the top row, the 4 and 32 in the second row, and the 16 and 8 in the bottom row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_NiP5DkzzJvhgOv6BaO4k",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        8
+      ],
+      [
+        0,
+        2,
+        4,
+        32
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 316,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2 and 4 in the second row, and the 16 and 8 in the bottom row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Z4rG3zV9dAlgkfVY5Si6",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        32,
+        0
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 320,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 2 and 32 in the third row, and the 16 and 128 in the bottom row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ackLrYMeoqBXIaJdgG0E",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        32,
+        0
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 320,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 2s in the third row, and create more space for future merges.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_9X4m2AwSAIXEBaLd06ce",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        8,
+        4
+      ],
+      [
+        0,
+        2,
+        4,
+        32
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 322,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 32 and 64 in the third row, and the 4 and 8 in the bottom row. It will also bring the 2 and 4 together in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_xEWjOc4TI7IZU5ZehwUK",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        4,
+        32,
+        0
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 324,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the third row, and the two 4s in the second row. It will also bring the 8 and 4 together in the first row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_rmPPTpVWl61PPRzpo3BK",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        2,
+        4,
+        32
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 326,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the first row, and the two 4s in the third row. It will also bring the 8 and 2 together in the first row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_jQ23cFxLIDvRdM56aWTV",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        4,
+        4,
+        32,
+        2
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 328,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the second row, and the two 32s in the third row. It will also bring the 8 and 2 together in the first row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_bRcbxtFpg4BlB4uHsdO7",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        8,
+        32,
+        2,
+        2
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 330,
+    "llm_reasoning": "I recommend shifting the tiles to the left again. This will combine the two 4s in the second row, and the two 32s in the third row. It will also bring the 8 and 2 together in the first row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_2N5tNtRqFWhER2G1FzJ5",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        8,
+        32,
+        4
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 332,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the second row, and the two 32s in the third row. It will also bring the 8 and 4 together in the first row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_ezyWe3hIxZtZkzPLgPxy",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        8,
+        32,
+        4
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 332,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the second row, and the two 32s in the third row. It will also bring the 8 and 4 together in the first row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_NMptLuUHuSZ1RhNfQvrU",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        8,
+        32,
+        4
+      ],
+      [
+        2,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 332,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the first column, and the two 32s in the second column. It will also bring the 8 and 4 together in the first row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_qFF2t4VBHIcjd1jNnA8L",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        4,
+        4,
+        0
+      ],
+      [
+        2,
+        16,
+        32,
+        2
+      ],
+      [
+        4,
+        32,
+        64,
+        8
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 336,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 8 and 4 in the first row, the 8 and 32 in the second row, the 32 and 64 in the third row, and the 16 and 128 in the fourth row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_pSdHdeSFaWBMS2Pb6jXz",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        8
+      ],
+      [
+        2,
+        16,
+        32,
+        2
+      ],
+      [
+        4,
+        32,
+        64,
+        8
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 338,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2 and 2 in the second row, the 8 in the fourth row, the 4 and 4 in the first row, and the 2 and 8 in the second column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_UqtejJQ96brGdIPi24Vb",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        0,
+        2
+      ],
+      [
+        2,
+        16,
+        32,
+        2
+      ],
+      [
+        4,
+        32,
+        64,
+        8
+      ],
+      [
+        16,
+        128,
+        16,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 340,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 2 and 2 in the second row, the 4 and 16 in the third row, and the 16 and 128 in the fourth row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_kWIqUqgjniGI17LAKPMT",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        32,
+        0
+      ],
+      [
+        4,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        16,
+        16
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 342,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 2 and 2 in the first column, the 16 and 32 in the second column, and the 32 and 64 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_LIfK4kvtGELpT7eE2862",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        2,
+        8
+      ],
+      [
+        0,
+        4,
+        16,
+        32
+      ],
+      [
+        4,
+        32,
+        64,
+        4
+      ],
+      [
+        0,
+        16,
+        128,
+        32
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 344,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 16 and 16 in the bottom row, and the 32 and 64 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_c2tlaOeyI9wcizrhLGSL",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        4,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 346,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the first row, and the 4 and 16 in the second row, and the 4 and 32 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_zVEXw8thpsrXK3LXGrJV",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        4,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 346,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This move will combine the two 4s in the first column, and the 4 and 32 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_i7EL8OCNKUqxirWB1uVR",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        8,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        32,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 348,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 8 and 2 in the second column, and the 4 and 4 in the last column, and the 32 and 128 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_2C2SC1cooGxdGnXFnm1q",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        0,
+        8
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        32,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 350,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2 and 2 in the last column, and the 32 and 64 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_aiR9RXbCxQ4XfQHe3sru",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        2,
+        8
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        32,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 352,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2 and 2 in the last column, and the 32 and 64 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_RHpLiG8jjpvu6FVCaWNt",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        2,
+        0
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        32,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 354,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 4 with the 16, the 8 with the 32, and the 16 with the 128.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_vVlVR9SA0XYNJbgkP1sb",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        2,
+        0
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        32,
+        4
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 354,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 4s into an 8, and the 2 with the 8 to make a 10.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_9Ix2QN9fag8bjeiDrChM",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        32,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 356,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2 with the 8, and the 2 with the 4 to make a 6.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_cVBK3k50yE8hAHRWMMUB",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        2
+      ],
+      [
+        16,
+        128,
+        32,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 356,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2 with the 8, and the 2 with the 4 to make a 6.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_gjEPVppytLQQhRjM3msY",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 358,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 4 with the 8, and the 16 with the 32 to make a 48.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_g2LAgW2nO8u2TltkcUoa",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        4,
+        16,
+        32,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 358,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the first column, and the two 4s in the last column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_EqLe1YVO3evp8DVx4QpU",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        4,
+        16,
+        32,
+        0
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 360,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 4 with the 8, and the 16 with the 32.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Yeh7UK7Dfjnx5HDDhdog",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        2,
+        4,
+        16,
+        32
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 362,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2 with the 4, and the 32 with the 64.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_nDVAR00Dyi54V46RjNK3",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        2,
+        4,
+        16,
+        32
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 362,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This should combine the 4s and the 32s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_62Ml9hnm3h62lavZbx2n",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        8,
+        2
+      ],
+      [
+        4,
+        8,
+        16,
+        32
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 364,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 4s, 8s, and 16s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_Ecp7reo9HAIfvP98LWti",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        2,
+        2
+      ],
+      [
+        4,
+        8,
+        16,
+        32
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 366,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 32s and 8s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_oE7lzLBJEqxQkcBmqAqW",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        4
+      ],
+      [
+        4,
+        8,
+        16,
+        32
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 370,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 2s and 4.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_jySpPOGpD2a6dJnDqRPQ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        4
+      ],
+      [
+        4,
+        8,
+        16,
+        32
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 370,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 4s into an 8.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_B22HmyB9kzFQluw7z7pe",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        4
+      ],
+      [
+        4,
+        8,
+        16,
+        32
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 370,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 8s and 4s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_jIefEfT48binS8IGZ3aG",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        4
+      ],
+      [
+        8,
+        8,
+        16,
+        32
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 374,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 4s and 8s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_EDMCEAkZpQYSJdoNFsh8",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        4
+      ],
+      [
+        2,
+        16,
+        16,
+        32
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 376,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the 8s and 32s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_t0NOHVqckq2oVaD9h1XX",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        4
+      ],
+      [
+        2,
+        32,
+        32,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 378,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the 16s and 32s.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_C6Y7SVpwV8UXMtSJZEmm",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        4
+      ],
+      [
+        2,
+        64,
+        2,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 380,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 32s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_TZKQNyvpfBd3pQuuH9wK",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        4
+      ],
+      [
+        2,
+        64,
+        2,
+        2
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 380,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the 32 and 64 in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_3GoRw09kRUUfuKCRqAzq",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        8,
+        4
+      ],
+      [
+        2,
+        2,
+        64,
+        4
+      ],
+      [
+        8,
+        32,
+        64,
+        4
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 382,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_tx4XIbFd3zsX6oM4bOBk",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        8,
+        32,
+        128,
+        8
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 384,
+    "llm_reasoning": "I recommend shifting the tiles down. This will combine the two 2s in the second column and the two 64s in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_G39IbprzFj0ZDBoWb3vS",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        4,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        8,
+        32,
+        128,
+        8
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 386,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will line up the 2 in the first row with the 4 in the second row, and the 8 in the second row with the 4 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_VvpnmyiYRf5KB8kDRw0O",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        2,
+        4,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        8,
+        32,
+        128,
+        8
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 388,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 2s in the first row, and the two 4s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_bzpu4PXSMnwjrmi9UaPN",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        4,
+        2,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        8,
+        32,
+        128,
+        8
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 390,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the first row, and the two 4s in the second row, creating a 4 and an 8 respectively.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_RIPRla3pOIpIwRVZrNDi",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        2,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        8,
+        32,
+        128,
+        8
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 392,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 4s in the first row, the 2 and 4 in the second row, and the 8 and 32 in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_dV4tsi9x0DvKGPSi7VrH",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        2,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        8,
+        32,
+        128,
+        8
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 392,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 4s in the first row and the two 8s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_rmp6mH30kZJ5GNvxG4YY",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        8,
+        32,
+        128,
+        8
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 394,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 4s in the first row, and the two 8s in the third row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_YwsiLraEfXAbhob4i3Pe",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        8,
+        32,
+        128,
+        8
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 394,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 8s in the first row, and the two 4s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_AgkwkPlbvPJSLhaB8vNS",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        4,
+        8,
+        4
+      ],
+      [
+        8,
+        32,
+        128,
+        8
+      ],
+      [
+        16,
+        128,
+        32,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 394,
+    "invalid_move": true,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 8s in the first row, and the two 4s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_8LIrkqQtIxribdtCfklC",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        4,
+        2
+      ],
+      [
+        8,
+        4,
+        8,
+        4
+      ],
+      [
+        16,
+        32,
+        128,
+        16
+      ],
+      [
+        2,
+        128,
+        32,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 396,
+    "llm_reasoning": "I recommend shifting the tiles up. This will combine the two 2s in the first column, and the two 8s in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_wRZMJapg2jjpprWcUQRV",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        4,
+        2
+      ],
+      [
+        8,
+        4,
+        8,
+        4
+      ],
+      [
+        16,
+        32,
+        128,
+        16
+      ],
+      [
+        2,
+        2,
+        128,
+        32
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 398,
+    "llm_reasoning": "I recommend shifting the tiles to the right. This will combine the two 16s in the last row and the two 32s in the third column.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_eIuAH2DmJ8wy47ucRgxJ",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        4,
+        2
+      ],
+      [
+        8,
+        4,
+        8,
+        4
+      ],
+      [
+        16,
+        32,
+        128,
+        16
+      ],
+      [
+        4,
+        128,
+        32,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 400,
+    "llm_reasoning": "I recommend shifting the tiles to the left. This will combine the two 2s in the bottom row and the two 4s in the second row.\n",
+    "tool_call": {
+      "id": "tool_0_make_move_x64gBKcbt5oNxKNGWFG8",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "final_score": 400,
+    "game_end_reason": "no_moves_available",
+    "total_moves": 183
+  }
+]

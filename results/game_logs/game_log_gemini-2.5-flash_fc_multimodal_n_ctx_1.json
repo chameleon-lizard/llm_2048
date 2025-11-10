@@ -1,0 +1,76 @@
+[
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "INITIAL",
+    "current_score": 4,
+    "mode": "function_calling_multimodal"
+  },
+  {
+    "game_state": [
+      [
+        2,
+        2,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 6,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "tool_0_make_move_bIRFxsSFldzw5vXAXnN3",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "final_score": 6,
+    "game_end_reason": "error: Could not get valid move after 5 attempts. Last response: tool_code\nprint(default_api.make_move(direction = \"left\"))\n",
+    "total_moves": 1
+  }
+]

@@ -1,0 +1,3347 @@
+[
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "INITIAL",
+    "current_score": 4,
+    "mode": "function_calling"
+  },
+  {
+    "game_state": [
+      [
+        2,
+        2,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 6,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_a5f8971566114f9f92bb14",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 8,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_2f3e5794fe2645fdaddb9c",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 10,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_adb1d6e86bda43e68b14b7",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        4,
+        0,
+        2
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 12,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_e5a2347f27214e0e8b4ab3",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 14,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_65b229e9001842dea3f5e1",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        0,
+        2
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 16,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_10e7b519a5e54680b83497",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        2,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 18,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_ec89377cc4c2442b93b4f2",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        2,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 20,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_fb4de2f33633424993d66c",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        4,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 22,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_ac701c1258634606844695",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        8,
+        2,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 24,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_6178a3c3b6fb4031ad8026",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        16,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 26,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_e92a05c33d61485ca4932d",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        16,
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 28,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_078f04850ba14db38116b7",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        16,
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        4,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 32,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_02603bc0084b4f2087cf1a",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        16,
+        4,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 34,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_e235946f718a40578fb338",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        16,
+        4,
+        0,
+        0
+      ],
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 36,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_66b02359e2324164a00d54",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        0,
+        2,
+        0
+      ],
+      [
+        8,
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        2
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 38,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_98f576cf3cd74fbe950515",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        2,
+        0,
+        0
+      ],
+      [
+        8,
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 40,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_951cbc7a6de6471b85fe03",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        2,
+        0,
+        0
+      ],
+      [
+        8,
+        4,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        2,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 42,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_38715c763beb44a2a7cfb8",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        16,
+        2,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        2,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 44,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_9b2b0acacebc4f41b65876",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        32,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 46,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_a3bf7d419e874012a9a4cc",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        4,
+        0,
+        0
+      ],
+      [
+        32,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 48,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_f11f89339b5143a1af1a45",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        32,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 50,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_7c38a06f746b40888ebff7",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        32,
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 52,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_593589385dc242db858e39",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        32,
+        0,
+        4,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 56,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_36c896cc68d24b6d8f469d",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        32,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        4,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 58,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_7aba35231b544f83b7b1ae",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        32,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        2
+      ],
+      [
+        2,
+        8,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 60,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_f95854a629a74df29bf546",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        32,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        2,
+        0
+      ],
+      [
+        2,
+        8,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 62,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_0248d7bb247c48d0a66f8c",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        8
+      ],
+      [
+        0,
+        0,
+        32,
+        2
+      ],
+      [
+        2,
+        0,
+        8,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        8
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 64,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_2503f0587d974861be1815",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        32,
+        8
+      ],
+      [
+        0,
+        0,
+        8,
+        4
+      ],
+      [
+        0,
+        2,
+        2,
+        8
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 66,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_6095d21769e34aa6aecdb3",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        32,
+        8,
+        0
+      ],
+      [
+        8,
+        4,
+        2,
+        0
+      ],
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 68,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_8316d3bbf3474f9693ffb0",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        32,
+        8,
+        0
+      ],
+      [
+        8,
+        4,
+        2,
+        0
+      ],
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 68,
+    "invalid_move": true,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_bee4dc52e11d4c2bbb1064",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        32,
+        8
+      ],
+      [
+        0,
+        8,
+        4,
+        2
+      ],
+      [
+        2,
+        0,
+        4,
+        8
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 70,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_dff54fc4e54d4e219d7eb9",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        2,
+        32,
+        8
+      ],
+      [
+        0,
+        8,
+        8,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        8
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 72,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_46dd9120d575477cb0b00e",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        32,
+        8,
+        0
+      ],
+      [
+        16,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 74,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_7258fc9a4ac249c8876743",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        32,
+        8,
+        0
+      ],
+      [
+        16,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 74,
+    "invalid_move": true,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_6a05b765b4d94989843ca3",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        4,
+        32,
+        8
+      ],
+      [
+        0,
+        0,
+        16,
+        2
+      ],
+      [
+        2,
+        0,
+        2,
+        8
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 76,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_8d053e7079b64ffbb3ec4b",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        32,
+        8,
+        2
+      ],
+      [
+        16,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        8,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 78,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_61091b7f5a1b4d16b37078",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        32,
+        8,
+        2
+      ],
+      [
+        2,
+        0,
+        16,
+        2
+      ],
+      [
+        0,
+        0,
+        4,
+        8
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 80,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_677a209b2ced48688c18be",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        8,
+        4
+      ],
+      [
+        4,
+        0,
+        16,
+        8
+      ],
+      [
+        2,
+        32,
+        4,
+        2
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 82,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_4d5919dbca704777bbe476",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        4,
+        0
+      ],
+      [
+        8,
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        8,
+        0
+      ],
+      [
+        2,
+        32,
+        4,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 86,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_2906c7603abb4817a67aaf",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        4,
+        4,
+        2
+      ],
+      [
+        8,
+        16,
+        8,
+        0
+      ],
+      [
+        4,
+        32,
+        4,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        2
+      ]
+    ],
+    "action": "UP",
+    "current_score": 88,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_c42bf271858943d1af51b5",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        2,
+        0
+      ],
+      [
+        8,
+        16,
+        8,
+        0
+      ],
+      [
+        4,
+        32,
+        4,
+        2
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 90,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_bd57690bd9724bebbb859e",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        8,
+        2,
+        0
+      ],
+      [
+        8,
+        16,
+        8,
+        0
+      ],
+      [
+        8,
+        32,
+        4,
+        2
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 92,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_92a916443c3341bab388f6",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        2,
+        4
+      ],
+      [
+        16,
+        16,
+        8,
+        0
+      ],
+      [
+        0,
+        32,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 94,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_ec1a30153e314e74b1299f",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        8,
+        2,
+        4
+      ],
+      [
+        32,
+        8,
+        0,
+        0
+      ],
+      [
+        32,
+        4,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 96,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_d1ce50d191b1440093a1e9",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        16,
+        4,
+        4
+      ],
+      [
+        64,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "action": "UP",
+    "current_score": 98,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_6d9000a159bf482f8719cf",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        16,
+        8,
+        0
+      ],
+      [
+        64,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 100,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_556713e94a734cfa942e32",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        16,
+        8,
+        0
+      ],
+      [
+        64,
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 102,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_1708e75350544af689f8f0",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        16,
+        0,
+        0
+      ],
+      [
+        64,
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        8,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 104,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_73fcbafcabcf419386c217",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        16,
+        0,
+        0
+      ],
+      [
+        64,
+        4,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 106,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_e7aa97254eb64c169d0aeb",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        16,
+        0,
+        0
+      ],
+      [
+        64,
+        4,
+        0,
+        0
+      ],
+      [
+        16,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 108,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_c4e6fb2700af46e39ec673",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        4,
+        2
+      ],
+      [
+        2,
+        0,
+        2,
+        16
+      ],
+      [
+        0,
+        0,
+        64,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        16
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 110,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_71e44ea6799b4faaad0f0e",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        16,
+        0,
+        0
+      ],
+      [
+        64,
+        4,
+        0,
+        0
+      ],
+      [
+        16,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 112,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_6f2654a54ebb4bc895cd59",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        64,
+        16,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 114,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_674f7abee4644e0e8d2cfb",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        64,
+        16,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        2,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 116,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_1ebc0c56613c4962bedbbf",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        2,
+        2
+      ],
+      [
+        64,
+        16,
+        0,
+        0
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 118,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_725349c2be904a18968611",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        64,
+        2,
+        0,
+        0
+      ],
+      [
+        16,
+        16,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        2,
+        2
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 120,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_5f4d8dd6ee034fccb4dc6a",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        2,
+        0,
+        0
+      ],
+      [
+        64,
+        2,
+        0,
+        0
+      ],
+      [
+        32,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        4,
+        0,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 122,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_999230b11981438c941b00",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        4,
+        0,
+        2
+      ],
+      [
+        64,
+        4,
+        0,
+        0
+      ],
+      [
+        32,
+        0,
+        0,
+        2
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 124,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_5f495f824bf640fbbcc892",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        8,
+        0,
+        4
+      ],
+      [
+        64,
+        0,
+        0,
+        0
+      ],
+      [
+        32,
+        0,
+        0,
+        2
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 126,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_5216902045e545559dfcb3",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        16,
+        4,
+        4,
+        0
+      ],
+      [
+        64,
+        0,
+        0,
+        0
+      ],
+      [
+        32,
+        2,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 130,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_f35172c98d6543b08c2d86",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        16,
+        8,
+        0,
+        0
+      ],
+      [
+        64,
+        0,
+        0,
+        4
+      ],
+      [
+        32,
+        2,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 134,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_0c29e9e8d6d4442689c636",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        16,
+        8,
+        0,
+        0
+      ],
+      [
+        64,
+        4,
+        2,
+        0
+      ],
+      [
+        32,
+        2,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 136,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_c17682c26b74495e88ef31",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        16,
+        0,
+        2,
+        0
+      ],
+      [
+        64,
+        8,
+        0,
+        0
+      ],
+      [
+        32,
+        4,
+        0,
+        0
+      ],
+      [
+        8,
+        2,
+        2,
+        0
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 138,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_341e5fef45734f8da3db65",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        16,
+        2
+      ],
+      [
+        0,
+        0,
+        64,
+        8
+      ],
+      [
+        2,
+        0,
+        32,
+        4
+      ],
+      [
+        0,
+        0,
+        8,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 140,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_88d976f2b7034cdcb92d56",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        16,
+        2
+      ],
+      [
+        0,
+        0,
+        64,
+        8
+      ],
+      [
+        2,
+        0,
+        32,
+        8
+      ],
+      [
+        0,
+        0,
+        8,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 142,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_8931cc535e774a50a31ac6",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        16,
+        2
+      ],
+      [
+        0,
+        0,
+        64,
+        0
+      ],
+      [
+        0,
+        0,
+        32,
+        2
+      ],
+      [
+        4,
+        0,
+        8,
+        16
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 144,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_67113b26cd084d71ae8135",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        16,
+        4
+      ],
+      [
+        0,
+        0,
+        64,
+        16
+      ],
+      [
+        0,
+        0,
+        32,
+        0
+      ],
+      [
+        0,
+        0,
+        8,
+        4
+      ]
+    ],
+    "action": "UP",
+    "current_score": 148,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_0c06c06a977240dbb31082",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        4,
+        16,
+        4
+      ],
+      [
+        0,
+        0,
+        64,
+        16
+      ],
+      [
+        0,
+        0,
+        2,
+        32
+      ],
+      [
+        0,
+        0,
+        8,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 150,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_607b784490ef48daacb1b0",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        0,
+        16,
+        4
+      ],
+      [
+        0,
+        0,
+        64,
+        16
+      ],
+      [
+        0,
+        0,
+        2,
+        32
+      ],
+      [
+        0,
+        4,
+        8,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 154,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_68b50d0e28de42dca3ed3e",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        4,
+        16,
+        4
+      ],
+      [
+        0,
+        0,
+        64,
+        16
+      ],
+      [
+        2,
+        0,
+        2,
+        32
+      ],
+      [
+        0,
+        0,
+        8,
+        4
+      ]
+    ],
+    "action": "UP",
+    "current_score": 156,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_60f65ad6f3f74b1b9f0840",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        16,
+        4,
+        0
+      ],
+      [
+        64,
+        16,
+        2,
+        0
+      ],
+      [
+        4,
+        32,
+        0,
+        0
+      ],
+      [
+        8,
+        4,
+        0,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 158,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_3e849c074b624f34bbc35d",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        32,
+        4,
+        2
+      ],
+      [
+        64,
+        32,
+        2,
+        0
+      ],
+      [
+        4,
+        4,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 160,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_b2065c4adee54139852f2f",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        64,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        64,
+        4,
+        0
+      ],
+      [
+        8,
+        4,
+        2,
+        2
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 162,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_520f714419d5449995650d",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        64,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        64,
+        4,
+        0
+      ],
+      [
+        8,
+        4,
+        4,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 164,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_b78924b9d9264d4e809888",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        0,
+        8
+      ],
+      [
+        0,
+        0,
+        64,
+        2
+      ],
+      [
+        0,
+        4,
+        64,
+        4
+      ],
+      [
+        0,
+        8,
+        8,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 166,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_18682df7d4b645068796f0",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        128,
+        8
+      ],
+      [
+        0,
+        4,
+        8,
+        2
+      ],
+      [
+        0,
+        8,
+        4,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "action": "UP",
+    "current_score": 170,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_dac07c5145e34bccbc2781",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        128,
+        8
+      ],
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        0,
+        0,
+        8,
+        8
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 172,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_a39792d707184fa89cb18c",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        128,
+        8,
+        0
+      ],
+      [
+        2,
+        4,
+        8,
+        2
+      ],
+      [
+        16,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        2
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 174,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_2e5012c5c12042d88c2c64",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        128,
+        16,
+        4
+      ],
+      [
+        16,
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 178,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_32ec325adcd6405899e3ae",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        128,
+        16,
+        0
+      ],
+      [
+        2,
+        4,
+        4,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 180,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_77c8a65e384846169e8e12",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        2
+      ],
+      [
+        16,
+        128,
+        16,
+        0
+      ],
+      [
+        2,
+        8,
+        4,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 182,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_8aac5c55fea645f9bdce83",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        2
+      ],
+      [
+        0,
+        16,
+        128,
+        16
+      ],
+      [
+        0,
+        2,
+        8,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 184,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_831e475a05b9439a8c30ad",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        4,
+        2
+      ],
+      [
+        0,
+        16,
+        128,
+        16
+      ],
+      [
+        0,
+        2,
+        8,
+        4
+      ]
+    ],
+    "action": "RIGHT",
+    "current_score": 184,
+    "invalid_move": true,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_e33af6ee555242aa8518aa",
+      "name": "make_move",
+      "arguments": {
+        "direction": "right"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        4,
+        4
+      ],
+      [
+        0,
+        16,
+        128,
+        16
+      ],
+      [
+        0,
+        2,
+        8,
+        4
+      ]
+    ],
+    "action": "DOWN",
+    "current_score": 186,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_5db5588b27464381915d5c",
+      "name": "make_move",
+      "arguments": {
+        "direction": "down"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        8,
+        0,
+        0
+      ],
+      [
+        16,
+        128,
+        16,
+        0
+      ],
+      [
+        2,
+        8,
+        4,
+        0
+      ]
+    ],
+    "action": "LEFT",
+    "current_score": 188,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_12abb520a7a84f4ca96253",
+      "name": "make_move",
+      "arguments": {
+        "direction": "left"
+      }
+    }
+  },
+  {
+    "game_state": [
+      [
+        4,
+        8,
+        16,
+        2
+      ],
+      [
+        16,
+        128,
+        4,
+        0
+      ],
+      [
+        2,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ]
+    ],
+    "action": "UP",
+    "current_score": 190,
+    "llm_reasoning": "",
+    "tool_call": {
+      "id": "call_d762770be4744420bf3174",
+      "name": "make_move",
+      "arguments": {
+        "direction": "up"
+      }
+    }
+  },
+  {
+    "final_score": 190,
+    "game_end_reason": "error: Could not get valid move after 5 attempts. Last response: Expecting value: line 545 column 1 (char 2992)",
+    "total_moves": 84
+  }
+]
